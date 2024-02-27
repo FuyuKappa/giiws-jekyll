@@ -4,7 +4,7 @@ layout: main
 <h1> List of the things </h1>
 
 {% for graphic in site.graphics %}
-	<a href="/giiws-jekyll/{{ graphic.url }}">
+	<a href="/giiws-jekyll{{ graphic.url }}">
 	{{ graphic.url }} <br>
 	</a>
 {% endfor %}
