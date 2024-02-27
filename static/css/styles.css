@@ -1,0 +1,160 @@
+@font-face{
+	font-family: 'hywen';
+	src: local('HYWenHei 85W');
+	
+}
+
+::-webkit-scrollbar{
+	display:none;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+body{
+	overflow-x:hidden;
+	background-color: #333F50;
+	font-family: 'hywen';
+}
+
+.grey{
+	border: 3px solid black;
+	background-image: linear-gradient(#c9c9c9, #a8a8a8, #6f6f6f);
+	width: 178px;
+	min-height: 300px;
+}
+.charName{
+	max-width: 178px;
+	text-align:center;
+	height: 36px;
+	padding-top: 5px;
+	font-size: 30px;
+	overflow: hidden;
+	white-space: normal;
+}
+
+img{
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+	width: 178px;
+	height: 178px;
+	padding:0px;
+	position: relative;
+	left:50%;
+	transform: translatex(-50%);
+}
+
+.divider{
+	border-color: black;
+	border-style: inset;
+	border-width: 1px;
+	display:block;
+	height:0px;
+	width: 176.2px;
+	margin:0px;
+}
+
+.patches{
+	text-align: center;
+	font-size: 48px;
+	color: white;
+}
+
+.lastRun{
+	text-align: center;
+	font-size: 35px;
+	color: white;
+}
+
+.runs{
+	text-align: center;
+	font-size: 33px;
+	color: white;
+}
+
+.howTo{
+	text-align: right;
+	margin: 0%;
+	position: relative;
+	top: 50%;
+	transform: translatey(-50%);
+	font-size: 30px;
+	color: white;
+}
+
+.instructions{
+	display:flex;
+	flex-direction: row;
+	margin:0%;
+	font-size: 30px;
+	color: red;
+}
+
+.goldenRow{
+	justify-items: center;
+	justify-content: center;
+	position: relative;
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	column-gap: 3.5em;
+	row-gap: 2em;
+	width: 75%;
+	top: 80px;
+	max-width: 1500px;
+}
+
+.golden{
+	border: 3px solid black;
+	background-image: linear-gradient(#FFD966, #FFC208, #AB8100);
+	width: 178px;
+	min-height: 300px;
+}
+
+.remarks{
+	text-align: center;
+	font-size: 40px;
+	color: white;
+}
+
+.version{
+	width: 100%;
+	position: relative;
+	top: 100px;
+	text-align: center;
+	font-size: 40px;
+	color: white;
+}
+
+.greyTable{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
+	top: 116px;
+	width: 75%;
+	max-width: 1500px;
+	column-gap: 3.5em;
+	row-gap: 2em;
+	padding-bottom: 8em;
+}
+
+.wrapper{
+	position: absolute;
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction:column;
+	align-items: center;
+	align-content: space-around;
+	justify-content: center;
+	left:50%;
+	transform: translatex(-50%);
+	width:100%;
+}
+
+@media only screen and (min-width: 768px){
+	
+}
