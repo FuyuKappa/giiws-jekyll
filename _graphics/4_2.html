@@ -2,8 +2,9 @@
 layout: graphic
 major_ver: 4
 minor_ver: 2
-full_ver: 4_2
 ---
+
+{% assign full_ver = "4_2" %}
 
 <body>
 	<div class="wrapper">
@@ -56,7 +57,7 @@ full_ver: 4_2
 	
 	<!-- GOLDEN ROW -->
 	<div class="goldenRow">
-		{%for char in site.data.4_2%}
+		{%for char in site.data[full_ver]%}
 			{%if char.status != "-"%}
 				<div class="golden">
 					<div class="charName">{{char.name}}</div>
@@ -80,7 +81,7 @@ full_ver: 4_2
 	
 	<!-- GREY TABLE -->
 	<div class="greyTable">
-		{%for char in site.data.4_2%}
+		{%for char in site.data[full_ver]%}
 			{%if char.status == "-"%}
 				<div class="grey">
 					<div class="charName">{{char.name}}</div>
