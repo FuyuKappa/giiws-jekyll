@@ -1,7 +1,7 @@
 @font-face{
 	font-family: 'hywen';
 	src: local('HYWenHei 85W');
-	
+	/*src: local('./static/fonts/zh-cn.ttf');*/
 }
 
 ::-webkit-scrollbar{
@@ -13,7 +13,6 @@ a, a:visited, a:hover, a:active {
 }
 
 body{
-	overflow-x:hidden;
 	background-color: #333F50;
 	font-family: 'hywen';
 }
@@ -143,7 +142,9 @@ img{
 }
 
 .wrapper{
-	position: absolute;
+	//float: right;
+	top: -100px;
+	position: relative;
 	display:flex;
 	flex-wrap:wrap;
 	flex-direction:column;
