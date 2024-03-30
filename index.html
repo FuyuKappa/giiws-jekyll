@@ -1,33 +1,42 @@
 ---
 layout: main
 ---
-
+<center>
 <h1> List of the things </h1>
+</center>
 
+<center>
+<div id="pageList">
 {% for graphic in site.graphics %}
-	[
-	{%for char in site.data[graphic.title]%}
-		{%if char.status != "-"%}
-			{{ char.name }},
-		{%endif%}
-	{%endfor%}
-	] <br>
-	<a href="/giiws-jekyll{{ graphic.url }}">V{{ graphic.title }}<br></a>
+	<a href="/giiws-jekyll{{ graphic.url }}">
+		<div class="page">
+			[
+			{%for char in site.data[graphic.title]%}
+				{%if char.status != "-"%}
+					{{ char.name }},
+				{%endif%}
+			{%endfor%}
+			] <br>
+			V{{ graphic.title }}
+		</div>
+	</a>
+	
 {% endfor %}
-
-<h1> End of the list </h1>
+</div>
+</center>
 
 <script>
 	let links = document.querySelectorAll("a");
 	links.forEach(function(link){
 		link.innerHTML = link.innerHTML.replace("_",".")
 		let numbers = link.innerHTML.split(".")
+		/*
 		if(numbers[0] == "V3"){
 			link.style.color = "green";
 		}
 		else if(numbers[0] == "V4"){
 			link.style.color = "blue";
 		}
+		*/
 	});
-
 </script>
