@@ -7,8 +7,12 @@
 	<link rel="shortcut icon" type="image/png" href="./favicon-32x32.png">
   </head>
   <body>
+	<!-- add sticky back button -->
+	<a href="/giiws-jekyll/" style="width: 100px; height: 100px; position: sticky; top: 8px; float: right; z-index: 1;">
+		<img src="./static/misc/BackArrow.png" style="width:100px; height:100px;"/>
+	</a>
     <section>
-      {{ content }}
-    </section>
+		{{ content }}
+	</section>	
   </body>
 </html>
