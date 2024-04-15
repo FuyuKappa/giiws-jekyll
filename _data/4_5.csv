@@ -31,6 +31,6 @@ Xianyun,1,4.4,1,-
 Nahida,1,4.4,3,-
 Xiao,1,4.4,5,-
 Yae Miko,1,4.4,4,-
-Mona,-,-,STANDARD,DONE(C)
-Jean,-,-,STANDARD,DONE(C)
-Diluc,-,-,STANDARD,DONE(C)
+Mona,STANDARD,-,-,DONE(C)
+Jean,STANDARD,-,-,DONE(C)
+Diluc,STANDARD,-,-,DONE(C)
