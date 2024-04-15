@@ -7,7 +7,8 @@ layout: main
 
 <center>
 <div id="pageList">
-{% for graphic in site.graphics %}
+{% assign reversedGraphics = site.graphics | reverse %}
+{% for graphic in reversedGraphics %}
 	<a href="/giiws-jekyll{{ graphic.url }}">
 		<div class="page">
 			[

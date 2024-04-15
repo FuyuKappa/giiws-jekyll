@@ -1,0 +1,25 @@
+{% if page.chronicle != null %}
+<span class="tableLabel" style="margin-top: 20px; text-align:center;">Chronicled Wish<br><u><span style="font-size:36px;">{{page.chronicle}}</span></u></span>
+{%endif%}
+<div class="goldenRow">
+	{%for char in site.data[full_ver]%}
+		{%if char.status == "DONE(C)" or char.status == "ACTIVE(C)" or char.status == "NEXT(C)" %}
+			<div class="golden">
+				<div class="charName">{{char.name}}</div>
+				<img src="./static/portraits/{{char.name}}.png"></img>
+				<hr class="divider">
+				{% if char.patches == "STANDARD" %}
+				<div class="patches" style="font-size:30px; line-height: 58px;">{{char.patches}}</div>
+				{% else %}
+				<div class="patches">{{char.patches}}</div>
+				{%endif%}
+				<hr class="divider">
+				<div class="lastRun">{%unless char.version == "-"%}V{%endunless%}{{char.version}}</div>
+				<hr class="divider">
+				<div class="lastRun">{{char.runs}}</div>
+				<hr class="divider">
+				<div class="remarks">{{char.status}}</div>
+			</div>
+		{%endif%}
+	{%endfor%}
+</div>

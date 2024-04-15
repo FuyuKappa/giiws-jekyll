@@ -40,3 +40,9 @@ for(let i = 0; i < names.length; i++){
 	fitText(names[i]);
 }
 
+
+let statuses = doc.querySelectorAll(".remarks");
+for(let i = 0; i < statuses.length; i++){
+	statuses[i].innerHTML = statuses[i].innerHTML.replace(/\(C\)/g,"");
+}
+
