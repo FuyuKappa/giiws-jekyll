@@ -1,15 +1,15 @@
 name,patches,version,runs,status
-Chiori,-,-,0,ACTIVE
-Itto,11,3.3,3,ACTIVE
-Neuvillette,4,4.1,1,NEXT
-Kazuha,7,3.7,3,NEXT
-Albedo,13,3.1,3,-
+Chiori,-,-,0,DONE
+Itto,11,3.3,3,DONE
+Neuvillette,4,4.1,1,ACTIVE
+Kazuha,7,3.7,3,ACTIVE
+Albedo,13,3.1,3,DONE(C)
 Shenhe,9,3.5,2,-
 Nilou,8,3.6,2,-
 Ganyu,8,3.6,4,-
 Al Haitham,7,3.7,2,-
-Eula,6,3.8,3,-
-Klee,6,3.8,4,-
+Eula,6,3.8,3,DONE(C)
+Klee,6,3.8,4,DONE(C)
 Kokomi,6,3.8,4,-
 Wanderer,6,3.8,2,-
 Lyney,5,4.0,1,-
@@ -31,3 +31,6 @@ Xianyun,1,4.4,1,-
 Nahida,1,4.4,3,-
 Xiao,1,4.4,5,-
 Yae Miko,1,4.4,4,-
+Mona,-,-,STANDARD,DONE(C)
+Jean,-,-,STANDARD,DONE(C)
+Diluc,-,-,STANDARD,DONE(C)
