@@ -1,8 +1,8 @@
-@font-face{
+/*@font-face{
 	font-family: 'hywen';
 	src: local('HYWenHei 85W');
 	/*src: local('./static/fonts/zh-cn.ttf');*/
-}
+/*}*/
 
 a, a:visited, a:hover, a:active {
   color: inherit;
@@ -17,7 +17,8 @@ h1{
 
 body{
 	background-color: #333F50;
-	font-family: 'hywen';
+	
+	font-family: helvetica;
 }
 
 #pageList{
@@ -38,6 +39,12 @@ body{
 	background: rgba(0, 0, 5, 0.5);
 	margin: 15px 15px;
 	padding: 15px 15px;
+	font-family: verdana;
+}
+
+.graphicTitle{
+	font-size: 42px;
+	font-weight: 700px;
 }
 
 

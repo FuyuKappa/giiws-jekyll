@@ -1,8 +1,8 @@
-@font-face{
+/*@font-face{
 	font-family: 'hywen';
 	src: local('HYWenHei 85W');
 	/*src: local('./static/fonts/zh-cn.ttf');*/
-}
+/*}*/
 
 ::-webkit-scrollbar{
 	display:none;
@@ -12,9 +12,16 @@ a, a:visited, a:hover, a:active {
   color: inherit;
 }
 
+/*.center{
+	position: relative;
+	left:50%;
+	transform: translatex(-50%);
+}*/
+
 body{
 	background-color: #333F50;
-	font-family: 'hywen';
+	font-weight: 600;
+	font-family: helvetica;
 }
 
 .grey{
@@ -31,6 +38,9 @@ body{
 	font-size: 30px;
 	overflow: hidden;
 	white-space: normal;
+	font-weight: 700;
+	font-family: verdana;
+	white-space: nowrap;
 }
 
 img{
@@ -89,6 +99,7 @@ img{
 	margin:0%;
 	font-size: 30px;
 	color: red;
+	text-align:left;
 }
 
 .goldenRow{
@@ -157,11 +168,71 @@ img{
 }
 
 .tableLabel{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: 30px;
 	color: white;
-	//text-decoration: underline;
+	text-align:center;
+	width:fit-content;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	/*word-break: break-word;*/
+	/*text-decoration: underline;*/
 }
 
-@media only screen and (min-width: 768px){
+.chronicleLabel{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 6px;
+	margin-bottom: 10px;
+	font-size:36px;
+	color:white;
+	text-align: center;
+	text-decoration: underline;
+	width: fit-content;
 	
+}
+
+.backArrow{
+	height: 15vh;
+	width: 15vw;
+	max-width: 100px;
+	max-height: 100px;
+	
+	position: sticky;
+	top: 25px;
+	right: 30px;
+	float: right;
+	z-index: 1;
+}
+
+.backArrowPng{
+	height: 15vh;
+	width: 15vw;
+	max-width: 100px;
+	max-height: 100px;
+}
+
+@media screen and (max-width: 800px){
+	.backArrow{
+		height: 15vw;
+		width: 15vw;
+		max-width: 150px;
+		max-height: 150px;
+		
+		position: sticky;
+		top: 25px;
+		right: 30px;
+		float: right;
+		z-index: 1;
+	}
+
+	.backArrowPng{
+		height: 15vw;
+		width: 15vw;
+		max-width: 150px;
+		max-height: 150px;
+	}
 }
