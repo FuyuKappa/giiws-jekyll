@@ -2,14 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>Genshin Infographic: V{{ page.major_ver }}.{{ page.minor_ver }}</title>
     <link rel="stylesheet" href="./static/css/stylesGraphic.css">
 	<link rel="shortcut icon" type="image/png" href="./favicon-32x32.png">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	
   </head>
   <body>
 	<!-- add sticky back button -->
-	<a href="/giiws-jekyll/" style="width: 100px; height: 100px; position: sticky; top: 8px; float: right; z-index: 1;">
-		<img src="./static/misc/BackArrow.png" style="width:100px; height:100px;"/>
+	<a href="/giiws-jekyll/" class="backArrow">
+		<img src="./static/misc/BackArrow.png" class="backArrowPng"/>
 	</a>
     <section>
 		{{ content }}		

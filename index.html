@@ -11,14 +11,16 @@ layout: main
 {% for graphic in reversedGraphics %}
 	<a href="/giiws-jekyll{{ graphic.url }}">
 		<div class="page">
+			<span class="graphicTitle">V{{ graphic.title }}</span>
+			<br>
 			[
 			{%for char in site.data[graphic.title]%}
 				{%if char.status != "-"%}
 					{{ char.name }},
 				{%endif%}
 			{%endfor%}
-			] <br>
-			V{{ graphic.title }}
+			]
+			
 		</div>
 	</a>
 	

@@ -1,5 +1,6 @@
 {% if page.chronicle != null %}
-<span class="tableLabel" style="margin-top: 20px; text-align:center;">Chronicled Wish<br><u><span style="font-size:36px;">{{page.chronicle}}</span></u></span>
+<p class="tableLabel">Chronicled Wish<br></p>
+<p class="chronicleLabel">{{page.chronicle}}</p>
 {%endif%}
 <div class="goldenRow">
 	{%for char in site.data[full_ver]%}
