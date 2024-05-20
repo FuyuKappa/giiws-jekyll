@@ -23,20 +23,22 @@ layout: main
 				{%endif%}
 			{%endfor%}
 			</div>
+			
 			<div class="timeInfo">
+				{% assign currentVersion = site.data.dates[graphic.title] %}
 				<div class="timeInfoData" id="runTime">
 				Banner duration:<br>
-				<span id="runTimeData">December 31, 2024 - January 2, 2025</span>
+				<span id="runTimeData">{{currentVersion.start}} - {{currentVersion.end}}</span>
 				</div>
 				
 				<div class="timeInfoData" id="daysSince">
-				Days since banner:<br>
-				<span id="daysSinceData">50</span>
+				Days since banner ended:<br>
+				<span id="daysSinceData">--</span>
 				</div>
 				
 				<div class="timeInfoData" id="phase1">
 				Phase change Date:<br>
-				<span id="phase1Data">January 1, 2025</span>
+				<span id="phase1Data">{{currentVersion.phase}}</span>
 				</div>
 			</div>
 			
@@ -52,6 +54,18 @@ layout: main
 	links.forEach(function(link){
 		link.innerHTML = link.innerHTML.replace("_",".")
 		let numbers = link.innerHTML.split(".")
+		
+		let end = link.querySelector("#runTimeData").textContent.split("- ")[1];
+		console.log(Date.parse(end));
+		console.log(Date.now());
+		let elapsedDays = Math.round( (Date.now() - Date.parse(end)) / (1000*3600*24));
+		if(elapsedDays < 0){
+			link.querySelector("#daysSince").innerHTML = link.querySelector("#daysSince")
+														.innerHTML.replace("since banner ended","until banner ends");
+			elapsedDays = elapsedDays * -1;
+		}
+		link.querySelector("#daysSinceData").innerHTML = elapsedDays;
+		
 		/*
 		if(numbers[0] == "V3"){
 			link.style.color = "green";
