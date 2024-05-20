@@ -11,15 +11,34 @@ layout: main
 {% for graphic in reversedGraphics %}
 	<a href="/giiws-jekyll{{ graphic.url }}">
 		<div class="page">
-			<span class="graphicTitle">V{{ graphic.title }}</span>
-			<br>
-			[
+			<div class="graphicTitle">V{{ graphic.title }}</div>
+			<div class="" style="margin-bottom: 1em;">Featured characters:</div>
+			
+			<div class = "characterDeck">			
 			{%for char in site.data[graphic.title]%}
 				{%if char.status != "-"%}
-					{{ char.name }},
+					<div class="character">
+						<img src="./static/portraits/{{char.name}}.png">
+					</div>
 				{%endif%}
 			{%endfor%}
-			]
+			</div>
+			<div class="timeInfo">
+				<div class="timeInfoData" id="runTime">
+				Banner duration:<br>
+				<span id="runTimeData">December 31, 2024 - January 2, 2025</span>
+				</div>
+				
+				<div class="timeInfoData" id="daysSince">
+				Days since banner:<br>
+				<span id="daysSinceData">50</span>
+				</div>
+				
+				<div class="timeInfoData" id="phase1">
+				Phase change Date:<br>
+				<span id="phase1Data">January 1, 2025</span>
+				</div>
+			</div>
 			
 		</div>
 	</a>
