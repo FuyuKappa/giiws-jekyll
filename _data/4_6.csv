@@ -1,8 +1,8 @@
 name,patches,version,runs,status
-Arlecchino,-,-,0,NEXT
-Lyney,6,4.0,1,NEXT
-Wanderer,7,3.8,2,NEXT
-Baizhu,4,4.2,2,NEXT
+Arlecchino,-,-,0,DONE
+Lyney,6,4.0,1,DONE
+Wanderer,7,3.8,2,ACTIVE
+Baizhu,4,4.2,2,ACTIVE
 Shenhe,10,3.5,2,-
 Nilou,9,3.6,2,-
 Ganyu,9,3.6,4,-
