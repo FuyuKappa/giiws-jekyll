@@ -2,8 +2,37 @@ let charPortraits = document.querySelectorAll(".charImg");
 charPortraits.forEach(function(charPortrait){
 	charPortrait.addEventListener('click', function(e){
 		e.preventDefault();
-		console.log("clicked "+ charPortrait.getAttribute("alt"));
+		console.log("clicked " + charPortrait.getAttribute("data"));
+		renderModal(charPortrait.getAttribute("data"));
 	});
 });
 
-//add check if we are in mobile mode
+let closeButton = document.querySelector("#closeButton");
+closeButton.addEventListener('click', function(){
+	closeModal();
+});
+
+
+//add check if we are in mobile mode?
+
+function renderModal(character){
+	let blur = document.querySelector(".globalBlur");
+	blur.style.display = "block";
+	blur.style.pointerEvents = "auto";
+	
+	let body = document.querySelector("body");
+	body.style.overflow = "hidden";
+	body.style.pointerEvents = "none";
+}
+
+function closeModal(){
+	//hide the modal
+	let blur = document.querySelector(".globalBlur");
+	blur.style.display = "none";
+	blur.style.pointerEvents = "auto";
+	
+	let body = document.querySelector("body");
+	body.style.overflow = "block";
+	body.style.pointerEvents = "auto";
+}
+
