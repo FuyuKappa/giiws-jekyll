@@ -18,7 +18,7 @@ layout: main
 			{%for char in site.data[graphic.title]%}
 				{%if char.status != "-"%}
 					<div class="character">
-						<img src="./static/portraits/{{char.name}}.png">
+						<img class="{{char.name}}Img charImg" src="./static/portraits/{{char.name}}.png" alt="{{char.name}} stats" title="{{char.name}} stats" data="{{char.name}}">
 					</div>
 				{%endif%}
 			{%endfor%}
@@ -49,30 +49,5 @@ layout: main
 </div>
 </center>
 
-<script>
-	let links = document.querySelectorAll("a");
-	links.forEach(function(link){
-		link.innerHTML = link.innerHTML.replace("_",".")
-		let numbers = link.innerHTML.split(".")
-		
-		let end = link.querySelector("#runTimeData").textContent.split("- ")[1];
-		console.log(Date.parse(end));
-		console.log(Date.now());
-		let elapsedDays = Math.round( (Date.now() - Date.parse(end)) / (1000*3600*24));
-		if(elapsedDays < 0){
-			link.querySelector("#daysSince").innerHTML = link.querySelector("#daysSince")
-														.innerHTML.replace("since banner ended","until banner ends");
-			elapsedDays = elapsedDays * -1;
-		}
-		link.querySelector("#daysSinceData").innerHTML = elapsedDays;
-		
-		/*
-		if(numbers[0] == "V3"){
-			link.style.color = "green";
-		}
-		else if(numbers[0] == "V4"){
-			link.style.color = "blue";
-		}
-		*/
-	});
-</script>
+<script src="./static/js/indexFunctions.js"></script>
+<script src="./static/js/characterModal.js"></script>
