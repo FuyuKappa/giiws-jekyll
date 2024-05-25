@@ -19,7 +19,8 @@
 .modalBox{
 	display:flex;
 	flex-direction: column;
-	background-color: #AAAAEE;
+	background-color: #192130;
+	border: 3px solid black;
 	border-radius: 10px;
 	width: 80%;
 	max-width: 1300px;

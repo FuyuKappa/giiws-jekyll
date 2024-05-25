@@ -8,13 +8,31 @@
 					<line x1="5" y1="36" x2="36" y2 ="5" style="stroke: #FFF; stroke-width: 5; stroke-linecap:round; "/>
 				</svg>
 			</div>
-			<div>
-				<center>
-				<h1>TEST</h1>
-				</center>
+			<div class="characterInfoBox"> <!-- Flex row -->
+				<div class="characterPortrait">
+					<img class="characterPortrait" src="">
+				</div>
+				<div class="characterInfo"> <!-- Flex column -->
+					<div class="characterName">
+					</div>
+					<div class="characterPatch">
+					</div>
+					<div class="characterRuns">
+					</div>
+				</div>
+			</div>
+			<div class="bannerList"> <!-- flex column; lock the height so we can scroll that. -->
+				<!-- banner template; use the same css as for the index
+				<div class="banner">
+				</div>
+				-->
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+let bannerOverview = {{ site.data.bannerOverview | jsonify }};
+</script>
 
 <script src="./static/js/characterModal.js"></script>

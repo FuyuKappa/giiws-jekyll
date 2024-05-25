@@ -1,3 +1,4 @@
+
 let charPortraits = document.querySelectorAll(".charImg");
 charPortraits.forEach(function(charPortrait){
 	charPortrait.addEventListener('click', function(e){
@@ -11,7 +12,6 @@ let closeButton = document.querySelector("#closeButton");
 closeButton.addEventListener('click', function(){
 	closeModal();
 });
-
 
 //add check if we are in mobile mode?
 
@@ -34,5 +34,14 @@ function closeModal(){
 	let body = document.querySelector("body");
 	body.style.overflow = "block";
 	body.style.pointerEvents = "auto";
+}
+
+//populate with data
+function populateData(){
+	//get the name of character being looked at
+	//get banners they ran on
+	//calculate last time they ran (e.g. Eula last ran in v2.4)
+	//calculate amount of runs
+	//
 }
 
