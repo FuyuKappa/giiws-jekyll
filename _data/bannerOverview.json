@@ -1,0 +1,181 @@
+{
+ "v4_7":[	"Clorinde",
+	"Al Haitham",
+	"Sigewinne",
+	"Furina"
+ ],
+ "v4_6":[
+	"Arlecchino",
+	"Lyney",
+	"Wanderer",
+	"Baizhu"
+ ],
+ "v4_5":[
+	"Chiori",
+	"Itto",
+	"Neuvillette",
+	"Kazuha",
+	"Albedo",
+	"Eula",
+	"Klee",
+	"Mona",
+	"Jean",
+	"Diluc"
+ ],
+ "v4_4":[
+	"Xianyun",
+	"Nahida",
+	"Xiao",
+	"Yae Miko"
+ ],
+ "v4_3":[
+	 "Navia",
+	 "Ayaka",
+	 "Raiden Shogun",
+	 "Yoimiya"
+ ],
+ "v4_2":[
+	 "Furina",
+	 "Baizhu",
+	 "Cyno",
+	 "Ayato"
+ ],
+ "v4_1":[
+	 "Neuvillette",
+	 "Hu Tao",
+	 "Wriothesley",
+	 "Venti"
+ ],
+ "v4_0":[
+	 "Lyney",
+	 "Yelan",
+	 "Zhongli",
+	 "Childe"
+ ],
+ "v3_8":[
+	 "Eula",
+	 "Klee",
+	 "Kokomi",
+	 "Wanderer"
+ ],
+ "v3_7":[
+	 "Yoimiya",
+	 "Yae Miko",
+	 "Kazuha",
+	 "Al Haitham"
+ ],
+ "v3_6":[
+	 "Nahida",
+	 "Nilou",
+	 "Baizhu",
+	 "Ganyu"
+ ],
+ "v3_5":[
+	 "Dehya",
+	 "Cyno",
+	 "Shenhe",
+	 "Ayaka"
+ ],
+ "v3_4":[
+	 "Al Haitham",
+	 "Xiao",
+	 "Hu Tao",
+	 "Yelan"
+ ],
+ "v3_3":[
+	 "Wanderer",
+	 "Itto",
+	 "Raiden Shogun",
+	 "Ayato"
+ ],
+ "v3_2":[
+	 "Nahida",
+	 "Yoimiya",
+	 "Yae Miko",
+	 "Childe"
+ ],
+ "v3_1":[
+	 "Cyno",
+	 "Venti",
+	 "Nilou",
+	 "Albedo"
+ ],
+ "v3_0":[
+	 "Tighnari",
+	 "Zhongli",
+	 "Ganyu",
+	 "Kokomi"
+ ],
+ "v2_8":[
+	 "Kazuha",
+	 "Klee",
+	 "Yoimiya"
+ ],
+ "v2_7":[
+	 "Yelan",
+	 "Xiao",
+	 "Itto"
+ ],
+ "v2_6":[
+	 "Ayato",
+	 "Venti",
+	 "Ayaka"
+ ],
+ "v2_5":[
+	 "Yae Miko",
+	 "Raiden Shogun",
+	 "Kokomi"
+ ],
+ "v2_4":[
+	 "Shenhe",
+	 "Xiao",
+	 "Zhongli",
+	 "Ganyu"
+ ],
+ "v2_3":[
+	 "Albedo",
+	 "Eula",
+	 "Itto"
+ ],
+ "v2_2":[
+	 "Childe",
+	 "Hu Tao"
+ ],
+ "v2_1":[
+	 "Raiden Shogun",
+	 "Kokomi"
+ ],
+ "v2_0":[
+	 "Ayaka",
+	 "Yoimiya"
+ ],
+ "v1_6":[
+	 "Klee",
+	 "Albedo"
+ ],
+ "v1_5":[
+	 "Zhongli",
+	 "Eula"
+ ],
+ "v1_4":[
+	 "Venti",
+	 "Childe"
+ ],
+ "v1_3":[
+	 "Xiao",
+	 "Keqing",
+	 "Hu Tao"
+ ],
+ "v1_2":[
+	 "Albedo",
+	 "Ganyu"
+ ],
+ "v1_1":[
+	 "Childe",
+	 "Zhongli"
+ ],
+ "v1_0":[
+	 "Venti",
+	 "Klee"
+ ]
+}
