@@ -4,7 +4,6 @@ links.forEach(function(link){
 	
 	let end = link.querySelector("#runTimeData").textContent.split("- ")[1];
 	if(end !== "??"){
-		console.log("end is ??");
 		let elapsedDays = Math.round( (Date.now() - Date.parse(end)) / (1000*3600*24));
 		if(elapsedDays < 0){
 			link.querySelector("#daysSince").innerHTML = link.querySelector("#daysSince")
