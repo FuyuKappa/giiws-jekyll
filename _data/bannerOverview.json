@@ -1,181 +1,282 @@
-{
- "v4_7":[	"Clorinde",
-	"Al Haitham",
-	"Sigewinne",
-	"Furina"
- ],
- "v4_6":[
-	"Arlecchino",
-	"Lyney",
-	"Wanderer",
-	"Baizhu"
- ],
- "v4_5":[
-	"Chiori",
-	"Itto",
-	"Neuvillette",
-	"Kazuha",
-	"Albedo",
-	"Eula",
-	"Klee",
-	"Mona",
-	"Jean",
-	"Diluc"
- ],
- "v4_4":[
-	"Xianyun",
-	"Nahida",
-	"Xiao",
-	"Yae Miko"
- ],
- "v4_3":[
-	 "Navia",
-	 "Ayaka",
-	 "Raiden Shogun",
-	 "Yoimiya"
- ],
- "v4_2":[
-	 "Furina",
-	 "Baizhu",
-	 "Cyno",
-	 "Ayato"
- ],
- "v4_1":[
-	 "Neuvillette",
-	 "Hu Tao",
-	 "Wriothesley",
-	 "Venti"
- ],
- "v4_0":[
-	 "Lyney",
-	 "Yelan",
-	 "Zhongli",
-	 "Childe"
- ],
- "v3_8":[
-	 "Eula",
-	 "Klee",
-	 "Kokomi",
-	 "Wanderer"
- ],
- "v3_7":[
-	 "Yoimiya",
-	 "Yae Miko",
-	 "Kazuha",
-	 "Al Haitham"
- ],
- "v3_6":[
-	 "Nahida",
-	 "Nilou",
-	 "Baizhu",
-	 "Ganyu"
- ],
- "v3_5":[
-	 "Dehya",
-	 "Cyno",
-	 "Shenhe",
-	 "Ayaka"
- ],
- "v3_4":[
-	 "Al Haitham",
-	 "Xiao",
-	 "Hu Tao",
-	 "Yelan"
- ],
- "v3_3":[
-	 "Wanderer",
-	 "Itto",
-	 "Raiden Shogun",
-	 "Ayato"
- ],
- "v3_2":[
-	 "Nahida",
-	 "Yoimiya",
-	 "Yae Miko",
-	 "Childe"
- ],
- "v3_1":[
-	 "Cyno",
-	 "Venti",
-	 "Nilou",
-	 "Albedo"
- ],
- "v3_0":[
-	 "Tighnari",
-	 "Zhongli",
-	 "Ganyu",
-	 "Kokomi"
- ],
- "v2_8":[
-	 "Kazuha",
-	 "Klee",
-	 "Yoimiya"
- ],
- "v2_7":[
-	 "Yelan",
-	 "Xiao",
-	 "Itto"
- ],
- "v2_6":[
-	 "Ayato",
-	 "Venti",
-	 "Ayaka"
- ],
- "v2_5":[
-	 "Yae Miko",
-	 "Raiden Shogun",
-	 "Kokomi"
- ],
- "v2_4":[
-	 "Shenhe",
-	 "Xiao",
-	 "Zhongli",
-	 "Ganyu"
- ],
- "v2_3":[
-	 "Albedo",
-	 "Eula",
-	 "Itto"
- ],
- "v2_2":[
-	 "Childe",
-	 "Hu Tao"
- ],
- "v2_1":[
-	 "Raiden Shogun",
-	 "Kokomi"
- ],
- "v2_0":[
-	 "Ayaka",
-	 "Yoimiya"
- ],
- "v1_6":[
-	 "Klee",
-	 "Albedo"
- ],
- "v1_5":[
-	 "Zhongli",
-	 "Eula"
- ],
- "v1_4":[
-	 "Venti",
-	 "Childe"
- ],
- "v1_3":[
-	 "Xiao",
-	 "Keqing",
-	 "Hu Tao"
- ],
- "v1_2":[
-	 "Albedo",
-	 "Ganyu"
- ],
- "v1_1":[
-	 "Childe",
-	 "Zhongli"
- ],
- "v1_0":[
-	 "Venti",
-	 "Klee"
- ]
-}
+[
+	{
+		"version" : "4.7",
+		"featuredCharacters": [
+			"Clorinde",
+			"Al Haitham",
+			"Sigewinne",
+			"Furina"
+		]
+	},
+	{
+		"version" : "4.6",
+		"featuredCharacters" : [
+			"Arlecchino",
+			"Lyney",
+			"Wanderer",
+			"Baizhu"
+		]
+	},
+	{
+		"version": "4.5",
+		"featuredCharacters" : [
+			"Chiori",
+			"Itto",
+			"Neuvillette",
+			"Kazuha",
+			"Albedo",
+			"Eula",
+			"Klee",
+			"Mona",
+			"Jean",
+			"Diluc"
+		]
+	},
+	{
+		"version": "4.4",
+		"featuredCharacters": [
+			"Xianyun",
+			"Nahida",
+			"Xiao",
+			"Yae Miko"
+		]
+	},
+	{
+		"version": "4.3",
+		"featuredCharacters": [
+			"Navia",
+			"Ayaka",
+			"Raiden Shogun",
+			"Yoimiya"
+		]
+	},
+	{
+		"version": "4.2",
+		"featuredCharacters": [
+			"Furina",
+			"Baizhu",
+			"Cyno",
+			"Ayato"
+		]
+	},
+	{
+		"version": "4.1",
+		"featuredCharacters":[
+			"Neuvillette",
+			"Hu Tao",
+			"Wriothesley",
+			"Venti"
+		]
+	},
+	{
+		"version": "4.0",
+		"featuredCharacters": [
+			"Lyney",
+			"Yelan",
+			"Zhongli",
+			"Childe"
+		]
+	},
+	{
+		"version": "3.8",
+		"featuredCharacters": [
+			"Eula",
+			"Klee",
+			"Kokomi",
+			"Wanderer"
+		]
+	},
+	{
+		"version": "3.7",
+		"featuredCharacters": [
+			"Yoimiya",
+			"Yae Miko",
+			"Kazuha",
+			"Al Haitham"
+		]
+	},
+	{
+		"version": "3.6",
+		"featuredCharacters": [
+			"Nahida",
+			"Nilou",
+			"Baizhu",
+			"Ganyu"
+		]
+	},
+	{
+		"version": "3.5",
+		"featuredCharacters": [
+			"Dehya",
+			"Cyno",
+			"Shenhe",
+			"Ayaka"
+		]
+	},
+	{
+		"version": "3.4",
+		"featuredCharacters": [
+			"Al Haitham",
+			"Xiao",
+			"Hu Tao",
+			"Yelan"
+		]
+	},
+	{
+		"version": "3.3",
+		"featuredCharacters": [
+			"Wanderer",
+			"Itto",
+			"Raiden Shogun",
+			"Ayato"
+		]
+	},
+	{
+		"version": "3.2",
+		"featuredCharacters": [
+			"Nahida",
+			"Yoimiya",
+			"Yae Miko",
+			"Childe"
+		]
+	},
+	{
+		"version": "3.1",
+		"featuredCharacters": [
+			"Cyno",
+			"Venti",
+			"Nilou",
+			"Albedo"
+		]
+	},
+	{
+		"version": "3.0",
+		"featuredCharacters": [
+			"Tighnari",
+			"Zhongli",
+			"Ganyu",
+			"Kokomi"
+		]
+	},
+	{
+		"version": "2.8",
+		"featuredCharacters": [
+			"Kazuha",
+			"Klee",
+			"Yoimiya"
+		]
+	},
+	{
+		"version": "2.7",
+		"featuredCharacters": [
+			"Yelan",
+			"Xiao",
+			"Itto"
+		]
+	},
+	{
+		"version": "2.6",
+		"featuredCharacters": [
+			"Ayato",
+			"Venti",
+			"Ayaka"
+		]
+	},
+	{
+		"version": "2.5",
+		"featuredCharacters": [
+			"Yae Miko",
+			"Raiden Shogun",
+			"Kokomi"
+		]
+	},
+	{
+		"version": "2.4",
+		"featuredCharacters": [
+			"Shenhe",
+			"Xiao",
+			"Zhongli",
+			"Ganyu"
+		]
+	},
+	{
+		"version": "2.3",
+		"featuredCharacters": [
+			"Albedo",
+			"Eula",
+			"Itto",
+			""
+		]
+	},
+	{
+		"version": "2.2",
+		"featuredCharacters": [
+			"Childe",
+			"Hu Tao"
+		]
+	},
+	{
+		"version": "2.1",
+		"featuredCharacters": [
+			"Raiden Shogun",
+			"Kokomi"
+		]
+	},
+	{
+		"version": "2.0",
+		"featuredCharacters": [
+			"Ayaka",
+			"Yoimiya"
+		]
+	},
+	{
+		"version": "1.6",
+		"featuredCharacters": [
+			"Klee",
+			"Albedo"
+		]
+	},
+	{
+		"version": "1.5",
+		"featuredCharacters": [
+			"Zhongli",
+			"Eula"
+		]
+	},
+	{
+		"version": "1.4",
+		"featuredCharacters": [
+			"Venti",
+			"Childe"
+		]
+	},
+	{
+		"version": "1.3",
+		"featuredCharacters": [
+			"Xiao",
+			"Keqing",
+			"Hu Tao"
+		]
+	},
+	{
+		"version": "1.2",
+		"featuredCharacters": [
+			"Albedo",
+			"Ganyu"
+		]
+	},
+	{
+		"version": "1.1",
+		"featuredCharacters": [
+			"Childe",
+			"Zhongli"
+		]
+	},
+	{
+		"version": "1.0",
+		"featuredCharacters": [
+			"Venti",
+			"Klee"
+		]
+	}
+]
