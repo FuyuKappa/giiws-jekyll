@@ -4,12 +4,18 @@ links.forEach(function(link){
 	
 	let end = link.querySelector("#runTimeData").textContent.split("- ")[1];
 	if(end !== "??"){
-		let elapsedDays = Math.round( (Date.now() - Date.parse(end)) / (1000*3600*24));
-		if(elapsedDays < 0){
+		//let elapsedDays = Math.round( (Date.now() - Date.parse(end)) / (1000*3600*24));
+		let elapsedDays = (Date.now() - Date.parse(end)) / (1000*3600*24);
+		console.log(elapsedDays);
+		if(elapsedDays < 1){
 			link.querySelector("#daysSince").innerHTML = link.querySelector("#daysSince")
 														.innerHTML.replace("since banner ended","until banner ends");
-			elapsedDays = elapsedDays * -1;
+			if(elapsedDays < 0)
+				elapsedDays = elapsedDays * -1;
+			else
+				elapsedDays = 0;
 		}
+		elapsedDays = Math.round(elapsedDays);
 		link.querySelector("#daysSinceData").innerHTML = elapsedDays;
 	}
 	else{

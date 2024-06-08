@@ -74,7 +74,34 @@ function populateData(charName){
 	banners.forEach(function(banner){
 		let newBanner = document.createElement("div");
 		newBanner.className = "banner";
-		newBanner.innerText = banner.version;
+		
+		let newTitle = document.createElement("div");
+		newTitle.className = "bannerTitle";
+		newTitle.innerText = "V" + banner.version;
+		newBanner.appendChild(newTitle);
+		
+		let featuredText = document.createElement("div");
+		featuredText.style.marginBottom = "1em";
+		featuredText.innerText = "Featured characters:";
+		newBanner.appendChild(featuredText);
+		
+		let characterDeck = document.createElement("div");
+		characterDeck.className = "characterDeck";
+		banner.featuredCharacters.forEach(function(character){
+			let characterDiv = document.createElement("div");
+			characterDiv.className = "character"
+			let characterPortrait = document.createElement("img");
+			characterPortrait.className = character + "Img charImg";
+			characterPortrait.setAttribute("src","./static/portraits/" + character + ".png");
+			characterPortrait.setAttribute("alt", character + " stats");
+			characterPortrait.setAttribute("title", character + " stats");
+			characterPortrait.setAttribute("data", character + " stats");
+			
+			characterDiv.appendChild(characterPortrait);
+			characterDeck.appendChild(characterDiv)
+		});
+		newBanner.appendChild(characterDeck);
+		
 		bannerList.appendChild(newBanner);
 	});
 }
