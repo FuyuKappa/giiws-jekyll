@@ -25,7 +25,7 @@
 	border-radius: 20px;
 	width: 80%;
 	max-width: 1300px;
-	justify-content: center;
+	/*justify-content: center;*/
 	align-content: center;
 	align-items: center;
 }
@@ -34,6 +34,7 @@
 	position: relative;
 	top: 0.8em;
 	width: 100%;
+	max-height: 40px;
 	height: 10%;
 	display:flex;
 	justify-content: right;
@@ -81,22 +82,33 @@ img.characterPortrait{
 }
 
 .bannerListContainer{
-	width: 94%;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	height: fit-content;
+	max-height: calc(100vh - 26em);
+	width: 100%;
 }
 
 .bannerList{
-	overflow-y: auto;
+	overflow-y: scroll;
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
-	height: fit-content;
-	max-height: 53vh;
+	flex-wrap: nowrap;
+	height: auto;
+	max-height: calc(100% - 1.5em);
 	background-color: rgba(0,0,5, 0.2);
 	align-items: center;
-	padding: 0.5em 0;
-	margin: 0.5em 0 0.5em 0;
 	color: white;
 	box-sizing: border-box;
+	width: 96%;
+	padding: 0.5em 0;
+	row-gap: 0.5em;
+}
+
+.bannerList::-webkit-scrollbar{
+	display: none;
 }
 
     /*min-width: 40%;
@@ -120,9 +132,12 @@ img.characterPortrait{
 	align-items:center;
 	flex-direction: column;
 	width: calc(100% - 1.5em);
-	margin: 0.5em 0.5em;
+	margin: 0 0.5em;
 }
 
+.characterDeck > .character > .modalCharImg{
+	cursor: default;
+}
 .bannerTitle{
 	font-size: 42px;
 	font-weight: 450;
