@@ -1,4 +1,3 @@
-
 let charPortraits = document.querySelectorAll(".charImg");
 charPortraits.forEach(function(charPortrait){
 	charPortrait.addEventListener('click', function(e){
@@ -57,10 +56,10 @@ function populateData(charName){
 	modalCharName.innerText = charName;
 	
 	let modalCharPatch = document.querySelector(".characterPatch");
-	modalCharPatch.innerText = "V" + banners[0].version; //get max?
+	modalCharPatch.innerText = "Last run was in V" + (currentVersion === banners[0].version ? banners[1].version : banners[0].version);
 	
 	let modalCharRuns = document.querySelector(".characterRuns");
-	modalCharRuns.innerText = banners.length; //check if the character is currently running; if so, -1.
+	modalCharRuns.innerText = "Total amount of runs: " + banners.length; //check if the character is currently running; if so, -1.
 	//Days since run?
 	
 	let existingBanner = document.querySelectorAll(".banner");
@@ -81,7 +80,7 @@ function populateData(charName){
 		newBanner.appendChild(newTitle);
 		
 		let featuredText = document.createElement("div");
-		featuredText.style.marginBottom = "1em";
+		featuredText.style.marginBottom = "0.5em";
 		featuredText.innerText = "Featured characters:";
 		newBanner.appendChild(featuredText);
 		
@@ -91,7 +90,7 @@ function populateData(charName){
 			let characterDiv = document.createElement("div");
 			characterDiv.className = "character"
 			let characterPortrait = document.createElement("img");
-			characterPortrait.className = character + "Img charImg";
+			characterPortrait.className = character + "Img charImg modalCharImg";
 			characterPortrait.setAttribute("src","./static/portraits/" + character + ".png");
 			characterPortrait.setAttribute("alt", character + " stats");
 			characterPortrait.setAttribute("title", character + " stats");
