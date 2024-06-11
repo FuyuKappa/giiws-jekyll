@@ -197,8 +197,8 @@ img{
 }
 
 .backArrow{
-	height: 15vh;
 	width: 15vw;
+	height: 15vw;
 	max-width: 100px;
 	max-height: 100px;
 	
@@ -210,7 +210,7 @@ img{
 }
 
 .backArrowPng{
-	height: 15vh;
+	height: 15vw;
 	width: 15vw;
 	max-width: 100px;
 	max-height: 100px;
