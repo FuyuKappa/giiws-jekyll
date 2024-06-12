@@ -5,6 +5,9 @@ layout: main
 <h1> List of the things </h1>
 </center>
 
+<center style="position: sticky; top: 5px; height: 2em;"> 
+{% include timeOptions.html %}
+</center>
 <center>
 <div id="pageList">
 {% assign reversedGraphics = site.graphics | reverse %}
@@ -27,8 +30,8 @@ layout: main
 			<div class="timeInfo">
 				{% assign currentVersion = site.data.dates[graphic.title] %}
 				<div class="timeInfoData" id="runTime">
-				Banner duration:<br>
-				<span id="runTimeData">{{currentVersion.start}} - {{currentVersion.end}}</span>
+				Version duration:<br>
+				<span id="runTimeData"><date value="{{currentVersion.start}}">--</date> - <date value="{{currentVersion.end}}">--</date></span>
 				</div>
 				
 				<div class="timeInfoData" id="daysSince">
@@ -38,7 +41,7 @@ layout: main
 				
 				<div class="timeInfoData" id="phase1">
 				Phase change Date:<br>
-				<span id="phase1Data">{{currentVersion.phase}}</span>
+				<span id="phase1Data"><date value="{{currentVersion.phase}}">--</date></span>
 				</div>
 			</div>
 			
