@@ -23,50 +23,20 @@
 				{% include timeOptions.html %}
 			</div>
 			<div class="bannerListContainer">
-				<div class="bannerList"> <!-- flex column; lock the height so we can scroll that. -->
-					<!-- banner template; use the same css as for the index
-					<div class="banner">
-						<div class="bannerTitle">V{{ graphic.title }}</div>
-						<div class="" style="margin-bottom: 1em;">Featured characters:</div>
-						
-						<div class = "characterDeck">			
-						{%for char in site.data[graphic.title]%}
-							{%if char.status != "-"%}
-								<div class="character">
-									<img class="{{char.name}}Img charImg" src="./static/portraits/{{char.name}}.png" alt="{{char.name}} stats" title="{{char.name}} stats" data="{{char.name}}">
-								</div>
-							{%endif%}
-						{%endfor%}
-						</div>
-						
-						<div class="timeInfo">
-							{% assign currentVersion = site.data.dates[graphic.title] %}
-							<div class="timeInfoData" id="runTime">
-							Banner duration:<br>
-							<span id="runTimeData">{{currentVersion.start}} - {{currentVersion.end}}</span>
-							</div>
-							
-							<div class="timeInfoData" id="daysSince">
-							Days since banner ended:<br>
-							<span id="daysSinceData">--</span>
-							</div>
-							
-							<div class="timeInfoData" id="phase1">
-							Phase change Date:<br>
-							<span id="phase1Data">{{currentVersion.phase}}</span>
-							</div>
-						</div>
-					</div>
-					-->
+				<div class="bannerList">
+					
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<!-- Data import, I am sorry for my sins -->
 <script>
+let datesData = {{ site.data.dates | jsonify }};
 let currentVersion = "{{ page.major_ver }}.{{ page.minor_ver }}";
 let bannerOverview = {{ site.data.bannerOverview | jsonify }};
 </script>
+<!-- The most I can do without a back-end fetch call, I think -->
 
 <script src="./static/js/characterModal.js"></script>
