@@ -15,13 +15,17 @@ let dateFormatter = new Intl.DateTimeFormat('en-US',{
 //attach event listeners to options setters
 
 //Times from the lookup table are in UTC
-let dates = document.querySelectorAll("date");
+function parseDates(){
+	let dates = document.querySelectorAll("date");
 
-dates.forEach(function(date){
-	try{
-		let timeStamp = parseInt(date.getAttribute("value"));
-		let dateTime = new Date(timeStamp);
-		date.innerText = dateFormatter.format(dateTime);
-		date.innerText = date.innerText.replace(/at/g,"");
-	}catch{}
-});
+	dates.forEach(function(date){
+		try{
+			let timeStamp = parseInt(date.getAttribute("value"));
+			let dateTime = new Date(timeStamp);
+			date.innerText = dateFormatter.format(dateTime);
+			date.innerText = date.innerText.replace(/at/g,"");
+		}catch{}
+	});
+}
+
+parseDates();
