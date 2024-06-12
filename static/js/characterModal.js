@@ -45,9 +45,8 @@ function populateData(charName){
 	let banners = [];
 	bannerOverview.forEach(function(banner){
 		banner.featuredCharacters.forEach(function(character){
-			if(character === charName){
+			if(character === charName)
 				banners.push(banner);
-			}
 		});
 	});
 	
@@ -77,6 +76,8 @@ function populateData(charName){
 	
 	let bannerList = document.querySelector(".bannerList");
 	banners.forEach(function(banner){
+		let key = banner.version.replace(/\./g,"_");
+			
 		let newBanner = document.createElement("div");
 		newBanner.className = "banner";
 		
@@ -107,7 +108,34 @@ function populateData(charName){
 		});
 		newBanner.appendChild(characterDeck);
 		
+		let center = document.createElement("center");
+		
+		let timeInfoDiv = document.createElement("div");
+		timeInfoDiv.className = "timeInfo";
+		let runTime = document.createElement("div");
+		runTime.className = "timeInfoData";
+		runTime.id = "runTime";
+		runTime.innerHTML = "Banner duration:<br><span id='runTimeData'><date value=" + datesData[key].start + ">--</date> - <date value=" + datesData[key].end + ">--</date></span>"
+		
+		let daysSince = document.createElement("div");
+		daysSince.className = "timeInfoData";
+		daysSince.id = "daysSince";
+		daysSince.innerHTML = "Days since banner ended:<br><span id='daysSinceData'>--</span>";
+		
+		let phase1 = document.createElement("div");
+		phase1.className = "timeInfoData";
+		phase1.id = "phase1";
+		phase1.innerHTML = "Phase change Date:<br><span id='phase1Data'><date value=" + datesData[key].phase + "></date></span>"
+		
+		timeInfoDiv.appendChild(runTime);
+		timeInfoDiv.appendChild(daysSince);
+		timeInfoDiv.appendChild(phase1)
+		center.appendChild(timeInfoDiv);
+		
+		newBanner.appendChild(center);
+		
 		bannerList.appendChild(newBanner);
+		parseDates();
 	});
 }
 
