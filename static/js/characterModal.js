@@ -49,14 +49,20 @@ function populateData(charName){
 				banners.push(banner);
 			}
 		});
-	});	
+	});
+	
+	currentVersion = bannerOverview[0].version;
+	
 	//calculate last time they ran (e.g. Eula last ran in v2.4)
 	//calculate amount of runs
 	let modalCharName = document.querySelector(".characterName");
 	modalCharName.innerText = charName;
 	
 	let modalCharPatch = document.querySelector(".characterPatch");
-	modalCharPatch.innerText = "Last run was in V" + (currentVersion === banners[0].version ? banners[1].version : banners[0].version);
+	if(!(banners.length === 1 && currentVersion === banners[0].version)) //if the current patch is the character's only run
+		modalCharPatch.innerText = "Last run was in V" + (currentVersion === banners[0].version ? banners[1].version : banners[0].version) + " (x days ago)";
+	else
+		modalCharPatch.innerText = "This is their first run";
 	
 	let modalCharRuns = document.querySelector(".characterRuns");
 	modalCharRuns.innerText = "Total amount of runs: " + banners.length; //check if the character is currently running; if so, -1.
