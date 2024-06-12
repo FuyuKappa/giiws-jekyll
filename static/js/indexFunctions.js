@@ -6,7 +6,7 @@ links.forEach(function(link){
 	if(end !== "??"){
 		//let elapsedDays = Math.round( (Date.now() - Date.parse(end)) / (1000*3600*24));
 		let elapsedDays = (Date.now() - Date.parse(end)) / (1000*3600*24);
-		console.log(elapsedDays);
+		//console.log(elapsedDays);
 		if(elapsedDays < 1){
 			link.querySelector("#daysSince").innerHTML = link.querySelector("#daysSince")
 														.innerHTML.replace("since banner ended","until banner ends");
