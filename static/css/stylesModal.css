@@ -86,7 +86,7 @@ img.characterPortrait{
 	flex-flow: column wrap;
 	align-items: center;
 	height: fit-content;
-	max-height: calc(100vh - 26em);
+	max-height: calc(100vh - 500px);
 	width: 100%;
 }
 
