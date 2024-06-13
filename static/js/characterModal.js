@@ -59,7 +59,7 @@ function populateData(charName){
 	
 	let modalCharPatch = document.querySelector(".characterPatch");
 	if(!(banners.length === 1 && currentVersion === banners[0].version)) //if the current patch is the character's only run
-		modalCharPatch.innerText = "Last run was in V" + (currentVersion === banners[0].version ? banners[1].version : banners[0].version) + " (x days ago)";
+		modalCharPatch.innerText = "Last run: V" + (currentVersion === banners[0].version ? banners[1].version : banners[0].version) + " (x days ago)";
 	else
 		modalCharPatch.innerText = "This is their first run";
 	
@@ -109,6 +109,7 @@ function populateData(charName){
 		newBanner.appendChild(characterDeck);
 		
 		let center = document.createElement("center");
+		center.style.width = "100%";
 		
 		let timeInfoDiv = document.createElement("div");
 		timeInfoDiv.className = "timeInfo";
@@ -135,6 +136,8 @@ function populateData(charName){
 		newBanner.appendChild(center);
 		
 		bannerList.appendChild(newBanner);
+		
+		calculateTime();
 		parseDates();
 	});
 }
