@@ -47,6 +47,7 @@ servers.forEach(function(server){
 		currentOptions.Server = server.value;
 		renderTimeUI();
 		setDateFormat();
+		calculateTime();
 	});
 });
 
