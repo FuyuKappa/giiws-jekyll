@@ -1,0 +1,13 @@
+.timeOptions{
+	display: flex;
+	justify-content: center;
+	color: white;
+	margin: 4px 0;
+	padding: 8px 20px;
+	background-color: rgba(0,0,5,0.4); 
+	width: fit-content;
+	box-sizing: border-box;
+	border-radius: 20px;
+	column-gap: 2em;
+	position: relative;
+}
