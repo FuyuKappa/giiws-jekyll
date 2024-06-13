@@ -1,18 +1,54 @@
 let currentOptions = {
 	"Server": "Asia",
-	"Local" : "False"
+	"Local" : false
 };
+//set default currentOptions to locale offset
 
 //initialize the UI
-document.querySelectorAll('#server > option[value="' + currentOptions.Server + '"]').forEach(function(option){option.setAttribute("selected", true)});
+function renderTimeUI(){
+	document.querySelectorAll("#server > option").forEach(function(option){option.selected = false});
+	document.querySelectorAll('#server > option[value="' + currentOptions.Server + '"]').forEach(function(option){option.selected = true});
+	currentOptions.Local === true ? locals.forEach(function(local){local.checked = true}) : locals.forEach(function(local){local.checked = false});
+}
 
-let dateFormatter = new Intl.DateTimeFormat('en-US',{
-	dateStyle:'long',
-    timeStyle: 'short',
-    timeZone: 'Asia/Shanghai'
-});
+let dateFormatter;
+setDateFormat();
+function setDateFormat(){
+	let server = currentOptions.Server;
+	let timeZoneOffset;
+	if(server === "Asia"){
+		timeZoneOffset = "+08" 
+	}
+	else if(server === "Europe"){
+		timeZoneOffset = "+00" 
+	}
+	else if(server === "America"){
+		timeZoneOffset = "America/New_York" 
+	}
+	dateFormatter = new Intl.DateTimeFormat('en-US',{
+		dateStyle:'long',
+		timeStyle: 'short',
+		timeZone: timeZoneOffset
+	});
+	parseDates();
+}
 
 //attach event listeners to options setters
+let locals = document.querySelectorAll("#local");
+locals.forEach(function(local){
+	local.addEventListener('click', function(){
+		currentOptions.Local = local.checked;
+		renderTimeUI();
+	});
+});
+let servers = document.querySelectorAll("#server");
+servers.forEach(function(server){
+	server.addEventListener('change', function(){
+		currentOptions.Server = server.value;
+		renderTimeUI();
+		setDateFormat();
+	});
+});
 
 //Times from the lookup table are in UTC
 function parseDates(){
@@ -21,6 +57,11 @@ function parseDates(){
 	dates.forEach(function(date){
 		try{
 			let timeStamp = parseInt(date.getAttribute("value"));
+			
+			if(date.className === "phaseDate" && currentOptions.Server === "America"){
+				timeStamp = timeStamp + 46800;  //13 hours offset for america server???
+			}
+				
 			let dateTime = new Date(timeStamp);
 			date.innerText = dateFormatter.format(dateTime);
 			date.innerText = date.innerText.replace(/at/g,"");
@@ -50,6 +91,9 @@ function calculateTime(){
 			    .innerHTML.replace("Days since banner ended","Time until next phase");
 			//get phase change
 			//calculate in countdown
+			if(currentOptions.Server === "America"){
+				phase = parseInt(phase) + 46800000;
+			}
 			let [days, hours, minutes, seconds] = updateCountdown(phase, UTCNow);
 			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 		}
@@ -121,5 +165,6 @@ function updateCountdown(target, from){
 
 calculateTime();
 parseDates();
+renderTimeUI();
 
 setInterval(() => calculateTime(), 1000);
