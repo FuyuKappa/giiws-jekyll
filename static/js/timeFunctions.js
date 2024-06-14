@@ -1,6 +1,7 @@
 let currentOptions = {
 	"Server": "Asia",
-	"Local" : false
+	"Local" : false,
+	"timeZoneOffset": ""
 };
 //set default currentOptions to locale offset
 
@@ -12,27 +13,36 @@ function renderTimeUI(){
 }
 
 let dateFormatter;
-setDateFormat();
 function setDateFormat(){
 	let server = currentOptions.Server;
 	let timeZoneOffset;
-	if(server === "Asia"){
-		timeZoneOffset = "+08" 
-	}
-	else if(server === "Europe"){
-		timeZoneOffset = "+01" 
-	}
-	else if(server === "America"){
-		timeZoneOffset = "-05" 
-	}
+	
+	//if local = true, then set offset to whatever we have
+	if(currentOptions.Local === true)
+		currentOptions.timeZoneOffset = getTimeZoneOffsetInHours();
+	else if(server === "Asia")
+		currentOptions.timeZoneOffset = "+08"; 
+	else if(server === "Europe")
+		currentOptions.timeZoneOffset = "+01" 
+	else if(server === "America")
+		currentOptions.timeZoneOffset = "-05" 
+	
 	dateFormatter = new Intl.DateTimeFormat('en-US',{
 		dateStyle:'long',
 		timeStyle: 'short',
-		timeZone: timeZoneOffset
+		timeZone: currentOptions.timeZoneOffset
 	});
-	console.log(timeZoneOffset);
-	console.log(dateFormatter);
 	parseDates();
+}
+
+
+function getTimeZoneOffsetInHours(){
+	let diff = (new Date().getTimezoneOffset()) / -60;
+	diff > 0 ? diff = "+0" + diff : diff = "-0" + diff;
+	return diff;
+}
+function cleanOffset(string){
+	return string = string.replace(/0/g, "");
 }
 
 //attach event listeners to options setters
@@ -40,6 +50,7 @@ let locals = document.querySelectorAll("#local");
 locals.forEach(function(local){
 	local.addEventListener('click', function(){
 		currentOptions.Local = local.checked;
+		setDateFormat();
 		renderTimeUI();
 	});
 });
@@ -69,7 +80,7 @@ function parseDates(){
 			}
 				
 			let dateTime = new Date(timeStamp);
-			date.innerText = dateFormatter.format(dateTime);
+			date.innerText = dateFormatter.format(dateTime) + " (UTC" + cleanOffset(currentOptions.timeZoneOffset) + ")";
 			date.innerText = date.innerText.replace(/at/g,"");
 		}catch{}
 	});
@@ -122,41 +133,6 @@ function calculateTime(){
 			//get only days since
 			time.querySelector("#daysSinceData").innerHTML = elapsedDays;
 		}
-
-	/*
-		if(end !== "??"){
-			//let elapsedDays = Math.round( (Date.now() - Date.parse(end)) / (1000*3600*24));
-			let elapsedDays = (Date.now() - Date.parse(end)) / (1000*3600*24);
-			//console.log(elapsedDays);
-			if(elapsedDays < 1){
-				time.querySelector("#daysSince").innerHTML = time.querySelector("#daysSince")
-															.innerHTML.replace("since banner ended","until banner ends");
-				if(elapsedDays < 0)
-					elapsedDays = elapsedDays * -1;
-				else
-					elapsedDays = 0;
-			}
-			elapsedDays = Math.round(elapsedDays);
-			time.querySelector("#daysSinceData").innerHTML = elapsedDays;
-		}
-		else{
-			console.log("here");
-			let start = time.querySelector("#runTimeData").textContent.split("- ")[0];;
-			time.querySelector("#daysSince").innerHTML = time.querySelector("#daysSince")
-															.innerHTML.replace("since banner ended","until banner starts");
-			time.querySelector("#daysSinceData").innerHTML =  Math.round( (Date.now() - Date.parse(start)) / (1000*3600*24)) * -1;
-		}*/
-		
-		
-		/*
-		let numbers = time.innerHTML.split(".")
-		if(numbers[0] == "V3"){
-			time.style.color = "green";
-		}
-		else if(numbers[0] == "V4"){
-			time.style.color = "blue";
-		}
-		*/
 	});
 };
 
@@ -173,8 +149,15 @@ function updateCountdown(target, from){
 	return [days, hours, minutes, seconds];
 }
 
+setDateFormat();
 calculateTime();
 parseDates();
 renderTimeUI();
 
+//Put local offset in the local option label
+document.querySelectorAll("label[for='local']")
+		.forEach(function(label){
+			label.innerText = label.innerText + "(UTC"+ cleanOffset(getTimeZoneOffsetInHours()) + ")"
+		});
+		
 setInterval(() => calculateTime(), 1000);
