@@ -121,7 +121,7 @@ function populateData(charName){
 		let runTime = document.createElement("div");
 		runTime.className = "timeInfoData";
 		runTime.id = "runTime";
-		runTime.innerHTML = "Banner duration:<br><span id='runTimeData'><date value=" + datesData[key].start + ">--</date> - <date value=" + datesData[key].end + ">--</date></span>"
+		runTime.innerHTML = "Banner duration:<br><span id='runTimeData'><date value=" + datesData[key].start + ">--</date> - <date value=" + datesData[key].end + ">TBA</date></span>"
 		
 		let daysSince = document.createElement("div");
 		daysSince.className = "timeInfoData modalDays";
