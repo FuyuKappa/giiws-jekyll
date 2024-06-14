@@ -5,6 +5,8 @@ layout: main
 <h1> List of the things </h1>
 </center>
 
+{% include timeOptions.html %}
+
 <center>
 <div id="pageList">
 {% assign reversedGraphics = site.graphics | reverse %}
@@ -12,13 +14,13 @@ layout: main
 	<a href="/giiws-jekyll{{ graphic.url }}">
 		<div class="page">
 			<div class="graphicTitle">V{{ graphic.title }}</div>
-			<div class="" style="margin-bottom: 1em;">Featured characters:</div>
+			<div class="" style="margin-bottom: 0.5em;">Featured characters:</div>
 			
 			<div class = "characterDeck">			
 			{%for char in site.data[graphic.title]%}
 				{%if char.status != "-"%}
 					<div class="character">
-						<img src="./static/portraits/{{char.name}}.png">
+						<img class="{{char.name}}Img charImg" src="./static/portraits/{{char.name}}.png" alt="{{char.name}} stats" title="{{char.name}} stats" data="{{char.name}}">
 					</div>
 				{%endif%}
 			{%endfor%}
@@ -27,8 +29,8 @@ layout: main
 			<div class="timeInfo">
 				{% assign currentVersion = site.data.dates[graphic.title] %}
 				<div class="timeInfoData" id="runTime">
-				Banner duration:<br>
-				<span id="runTimeData">{{currentVersion.start}} - {{currentVersion.end}}</span>
+				Version duration:<br>
+				<span id="runTimeData"><date value="{{currentVersion.start}}">--</date> - <date value="{{currentVersion.end}}">--</date></span>
 				</div>
 				
 				<div class="timeInfoData" id="daysSince">
@@ -38,7 +40,7 @@ layout: main
 				
 				<div class="timeInfoData" id="phase1">
 				Phase change Date:<br>
-				<span id="phase1Data">{{currentVersion.phase}}</span>
+				<span id="phase1Data"><date class="phaseDate" value="{{currentVersion.phase}}">--</date></span>
 				</div>
 			</div>
 			
@@ -47,32 +49,6 @@ layout: main
 	
 {% endfor %}
 </div>
-</center>
 
-<script>
-	let links = document.querySelectorAll("a");
-	links.forEach(function(link){
-		link.innerHTML = link.innerHTML.replace("_",".")
-		let numbers = link.innerHTML.split(".")
-		
-		let end = link.querySelector("#runTimeData").textContent.split("- ")[1];
-		console.log(Date.parse(end));
-		console.log(Date.now());
-		let elapsedDays = Math.round( (Date.now() - Date.parse(end)) / (1000*3600*24));
-		if(elapsedDays < 0){
-			link.querySelector("#daysSince").innerHTML = link.querySelector("#daysSince")
-														.innerHTML.replace("since banner ended","until banner ends");
-			elapsedDays = elapsedDays * -1;
-		}
-		link.querySelector("#daysSinceData").innerHTML = elapsedDays;
-		
-		/*
-		if(numbers[0] == "V3"){
-			link.style.color = "green";
-		}
-		else if(numbers[0] == "V4"){
-			link.style.color = "blue";
-		}
-		*/
-	});
-</script>
+</center>
+<script src="./static/js/indexFunctions.js"></script>

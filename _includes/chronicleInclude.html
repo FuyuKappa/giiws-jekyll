@@ -7,7 +7,7 @@
 		{%if char.status == "DONE(C)" or char.status == "ACTIVE(C)" or char.status == "NEXT(C)" %}
 			<div class="golden">
 				<div class="charName">{{char.name}}</div>
-				<img src="./static/portraits/{{char.name}}.png"></img>
+				<img src="./static/portraits/{{char.name}}.png" class="{{char.name}}Img charImg" alt="{{char.name}} stats" title="{{char.name}} stats" data="{{char.name}}"></img>
 				<hr class="divider">
 				{% if char.patches == "STANDARD" %}
 				<div class="patches" style="font-size:30px; line-height: 58px;">{{char.patches}}</div>

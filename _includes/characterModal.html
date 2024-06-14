@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="./static/css/stylesModal.css">
+<div class="globalBlur">
+	<div class="characterModal">
+		<div class="modalBox">
+			<div class="top">
+				<svg height="40" width="40" id="closeButton">
+					<line x1="5" y1="5" x2="36" y2 ="36" style="stroke: #FFF; stroke-width: 5; stroke-linecap:round; "/>
+					<line x1="5" y1="36" x2="36" y2 ="5" style="stroke: #FFF; stroke-width: 5; stroke-linecap:round; "/>
+				</svg>
+			</div>
+			<div class="characterInfoBox"> <!-- Flex row -->
+				<div class="characterPortrait">
+					<img class="characterPortrait" src="" style="cursor: auto">
+				</div>
+				<div class="characterName">
+				</div>
+				<div class="characterPatch">
+				</div>
+				<div class="characterRuns">
+				</div>
+			</div>
+			
+			{% include timeOptions.html %}
+		
+			<div class="bannerListContainer">
+				<div class="bannerList">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Data import, I am sorry for my sins -->
+<script>
+let datesData = {{ site.data.dates | jsonify }};
+let currentVersion = "{{ page.major_ver }}.{{ page.minor_ver }}";
+let bannerOverview = {{ site.data.bannerOverview | jsonify }};
+</script>
+<!-- The most I can do without a back-end fetch call, I think -->
+
+<script src="./static/js/characterModal.js"></script>

@@ -44,6 +44,7 @@ body{
 }
 
 img{
+	cursor: pointer;
 	display: block;
 	margin-left:auto;
 	margin-right:auto;
@@ -61,7 +62,7 @@ img{
 	border-width: 1px;
 	display:block;
 	height:0px;
-	width: 176.2px;
+	width: 99.2%;
 	margin:0px;
 }
 
@@ -196,8 +197,8 @@ img{
 }
 
 .backArrow{
-	height: 15vh;
 	width: 15vw;
+	height: 15vw;
 	max-width: 100px;
 	max-height: 100px;
 	
@@ -209,7 +210,7 @@ img{
 }
 
 .backArrowPng{
-	height: 15vh;
+	height: 15vw;
 	width: 15vw;
 	max-width: 100px;
 	max-height: 100px;
