@@ -101,6 +101,8 @@ function calculateTime(){
 				.innerHTML.replace("since banner ended","until banner starts");
 			//get start
 			//calculate in countdown
+			let [days, hours, minutes, seconds] = updateCountdown(UTCNow, start);
+			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 		}
 		else if(end === "??"){ //if end doesn't exist, then calculate time to phase change
 			//change the text to "Time until next banner"
@@ -138,7 +140,7 @@ function calculateTime(){
 
 function updateCountdown(target, from){
 	if (typeof target == "string")
-		target = parseInt(target);0
+		target = parseInt(target);
 	
 	let diffInSec = Math.floor((target - from) / 1000);
 	let days = Math.floor(diffInSec / 86400)
