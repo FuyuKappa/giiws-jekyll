@@ -104,8 +104,8 @@ img.characterPortrait{
 	color: white;
 	box-sizing: border-box;
 	width: 96%;
-	padding: 0.5em 0;
-	row-gap: 0.5em;
+	padding: 16px 0;
+	row-gap: 16px;
 }
 
 .bannerList::-webkit-scrollbar{
@@ -132,8 +132,9 @@ img.characterPortrait{
 	font-family: verdana;
 	align-items:center;
 	flex-direction: column;
-	width: calc(100% - 1.5em);
-	margin: 0 0.5em;
+	width: auto;
+	margin: 0 1em;
+	padding: 8px 16px;
 }
 
 .characterDeck > .character > .modalCharImg{
