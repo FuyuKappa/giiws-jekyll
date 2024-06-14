@@ -20,16 +20,18 @@ function setDateFormat(){
 		timeZoneOffset = "+08" 
 	}
 	else if(server === "Europe"){
-		timeZoneOffset = "+00" 
+		timeZoneOffset = "+01" 
 	}
 	else if(server === "America"){
-		timeZoneOffset = "America/New_York" 
+		timeZoneOffset = "-05" 
 	}
 	dateFormatter = new Intl.DateTimeFormat('en-US',{
 		dateStyle:'long',
 		timeStyle: 'short',
 		timeZone: timeZoneOffset
 	});
+	console.log(timeZoneOffset);
+	console.log(dateFormatter);
 	parseDates();
 }
 
@@ -60,7 +62,10 @@ function parseDates(){
 			let timeStamp = parseInt(date.getAttribute("value"));
 			
 			if(date.className === "phaseDate" && currentOptions.Server === "America"){
-				timeStamp = timeStamp + 46800;  //13 hours offset for america server???
+				timeStamp = timeStamp + 46800000;  //+13 hours offset for america server???
+			}
+			else if(date.className === "phaseDate" && currentOptions.Server === "Europe"){
+				timeStamp = timeStamp + 25200000;  //+7 hours offset for Europe???
 			}
 				
 			let dateTime = new Date(timeStamp);
@@ -95,6 +100,10 @@ function calculateTime(){
 			if(currentOptions.Server === "America"){
 				phase = parseInt(phase) + 46800000;
 			}
+			else if(currentOptions.Server === "Europe"){
+				phase = parseInt(phase) + 25200000;  //7 hours offset for Europe???
+			}
+			
 			let [days, hours, minutes, seconds] = updateCountdown(phase, UTCNow);
 			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 		}
