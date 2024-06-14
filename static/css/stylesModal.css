@@ -96,7 +96,6 @@ img.characterPortrait{
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
-	flex-wrap: nowrap;
 	height: auto;
 	max-height: calc(100% - 1.5em);
 	background-color: rgba(0,0,5, 0.2);
@@ -112,19 +111,6 @@ img.characterPortrait{
 	display: none;
 }
 
-    /*min-width: 40%;
-	width: 80%;
-	max-width: 1400px;*/
-
-
-/*.banner{
-	border-radius: 5px;
-	border: 2px solid black;
-	
-	
-	background-color: rgba(0,0,0,0.2);
-}*/
-
 .banner{
 	display:flex;
 	border-radius: 20px;
@@ -132,8 +118,8 @@ img.characterPortrait{
 	font-family: verdana;
 	align-items:center;
 	flex-direction: column;
-	width: auto;
-	margin: 0 1em;
+	width: 94%;
+	margin: 0 16px;
 	padding: 8px 16px;
 }
 
