@@ -12,6 +12,19 @@ function renderTimeUI(){
 	currentOptions.Local === true ? locals.forEach(function(local){local.checked = true}) : locals.forEach(function(local){local.checked = false});
 }
 
+let specialTimeZones = {
+	"-9.5": "Pacific/Marquesas",
+	"-3.5": "America/St_Johns",
+	"-2.5": "America/St_Johns",
+	"+3.5": "Asia/Tehran",
+	"+4.5": "Asia/Kabul",
+	"+5.5": "Asia/Colombo",
+	"+6.5": "Asia/Yangon",
+	"+5.5": "Asia/Colombo",
+	"+9.5": "Australia/Adelaide",
+	"+10.5": "Australia/Adelaide"	
+};
+
 let dateFormatter;
 function setDateFormat(){
 	let server = currentOptions.Server;
@@ -30,19 +43,40 @@ function setDateFormat(){
 	dateFormatter = new Intl.DateTimeFormat('en-US',{
 		dateStyle:'long',
 		timeStyle: 'short',
-		timeZone: currentOptions.timeZoneOffset
+		timeZone: hoursOffsetToGMTOffset(currentOptions.timeZoneOffset)
 	});
 	parseDates();
 }
 
+function overrideFormatter(offsetInMinutes){
+	currentOptions.timeZoneOffset = getTimeZoneOffsetInHours(offsetInMinutes);
+	dateFormatter = new Intl.DateTimeFormat('en-US',{
+		dateStyle:'long',
+		timeStyle: 'short',
+		timeZone: hoursOffsetToGMTOffset(currentOptions.timeZoneOffset)
+	});
+	parseDates();
+	return currentOptions.timeZoneOffset, dateFormatter.resolvedOptions();
+}
 
-function getTimeZoneOffsetInHours(){
-	let diff = (new Date().getTimezoneOffset()) / -60;
-	diff > 0 ? diff = "+0" + diff : diff = "-0" + diff;
+function getTimeZoneOffsetInHours(offsetInMinutes = new Date().getTimezoneOffset()){
+	let diff = offsetInMinutes / -60;
+	diff > 0 ? diff = "+0" + diff : diff = "-0" + diff.toString().replace(/-/g,"");
 	return diff;
 }
+
 function cleanOffset(string){
 	return string = string.replace(/0/g, "");
+}
+
+function hoursOffsetToGMTOffset(offset){
+	offset = offset.replace(/([\+|-])0(\d)+/g, "$1$2");
+	if(offset.indexOf(".") !== -1)
+		return specialTimeZones[offset];
+	else if(offset[0] === "+")
+		return "Etc/GMT" + offset.replace(/\+/g, "-");
+	else
+		return "Etc/GMT" + offset.replace(/-/g, "+");
 }
 
 //attach event listeners to options setters
