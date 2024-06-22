@@ -12,8 +12,14 @@ charPortraits.forEach(function(charPortrait){
 });
 
 let closeButton = document.querySelector("#closeButton");
-closeButton.addEventListener('click', function(){
+closeButton.addEventListener('click', function(e){
+	e.stopPropagation();
 	closeModal();
+});
+let outside = document.querySelector(".globalBlur");
+outside.addEventListener('click', function(e){
+	if(e.target === outside)
+		closeModal();
 });
 
 //add check if we are in mobile mode?

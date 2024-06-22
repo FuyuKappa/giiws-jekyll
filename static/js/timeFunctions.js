@@ -138,32 +138,32 @@ function calculateTime(){
 			let [days, hours, minutes, seconds] = updateCountdown(UTCNow, start);
 			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 		}
-		else if(end === "??"){ //if end doesn't exist, then calculate time to phase change
+		else if(end === "??" || (end !== "??" && parseInt(end) >= UTCNow && UTCNow < phase)){ 
+			//if end doesn't exist, then calculate time to phase change OR if it does and we're still below phase change
 			//change the text to "Time until next banner"
 			time.querySelector("#daysSince").innerHTML = time.querySelector("#daysSince")
 			    .innerHTML.replace("Days since banner ended","Time until next phase");
 			//get phase change
 			//calculate in countdown
-			if(currentOptions.Server === "America"){
+			if(currentOptions.Server === "America")
 				phase = parseInt(phase) + 46800000;
-			}
-			else if(currentOptions.Server === "Europe"){
+			else if(currentOptions.Server === "Europe")
 				phase = parseInt(phase) + 25200000;  //7 hours offset for Europe???
-			}
 			
 			let [days, hours, minutes, seconds] = updateCountdown(phase, UTCNow);
 			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 		}
 		else if(end !== "??" && parseInt(end) >= UTCNow){
-		//end exists and we're below it, calculate time to end
+			//end exists and we're below it but we're beyond phase change, calculate time to end 
 			time.querySelector("#daysSince").innerHTML = time.querySelector("#daysSince")
 				.innerHTML.replace("Days since banner ended","Time until version ends");
 			//get end
 			//calculate in countdown
-			
+			let [days, hours, minutes, seconds] = updateCountdown(end, UTCNow);
+			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 		}
 		else if(end !== "??" && parseInt(end) < UTCNow){
-			//end exists and we're beyond it, calculate time since end
+			//end exists and we're beyond it, calculate days since end
 			//get end
 			let elapsedDays = Math.round((UTCNow - parseInt(end)) / (1000*3600*24));
 			//get only days since
@@ -193,7 +193,8 @@ renderTimeUI();
 //Put local offset in the local option label
 document.querySelectorAll("label[for='local']")
 		.forEach(function(label){
-			label.innerText = label.innerText + "(UTC"+ cleanOffset(getTimeZoneOffsetInHours()) + ")"
+			label.innerText = label.innerText + "(UTC"+ cleanOffset(getTimeZoneOffsetInHours()) + ")";
 		});
 		
+//update the countdown timer every second
 setInterval(() => calculateTime(), 1000);
