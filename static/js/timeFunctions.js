@@ -106,13 +106,11 @@ function parseDates(){
 		try{
 			let timeStamp = parseInt(date.getAttribute("value"));
 			
-			if(date.className === "phaseDate" && currentOptions.Server === "America"){
+			if(date.className === "phaseDate" && currentOptions.Server === "America")
 				timeStamp = timeStamp + 46800000;  //+13 hours offset for america server???
-			}
-			else if(date.className === "phaseDate" && currentOptions.Server === "Europe"){
+			else if(date.className === "phaseDate" && currentOptions.Server === "Europe")
 				timeStamp = timeStamp + 25200000;  //+7 hours offset for Europe???
-			}
-				
+
 			let dateTime = new Date(timeStamp);
 			date.innerText = dateFormatter.format(dateTime) + " (UTC" + cleanOffset(currentOptions.timeZoneOffset) + ")";
 			date.innerText = date.innerText.replace(/at/g,"");
@@ -128,11 +126,16 @@ function calculateTime(){
 		let [start, end] = time.querySelectorAll("#runTime > #runTimeData > date");
 		let phase = time.querySelector("#phase1 > #phase1Data > date").getAttribute("value");
 		end = end.getAttribute("value"); //still a string
+		let dataString = "<br><span id='daysSinceData'></span>"
+		
+		if(currentOptions.Server === "America")
+			phase = parseInt(phase) + 46800000;  //+13 hours offset for america server???
+		else if(currentOptions.Server === "Europe")
+			phase = parseInt(phase) + 25200000;  //+7 hours offset for Europe???
 		
 		if(end === "??" && phase === "??"){//if end doesn't exist, and neither does phase change, then calculate time to banner start
 			//change the text to "Time until banner starts"
-			time.querySelector("#daysSince").innerHTML = time.querySelector("#daysSince")
-				.innerHTML.replace("since banner ended","until banner starts");
+			time.querySelector("#daysSince").innerHTML = "Time until banner starts:" + dataString;
 			//get start
 			//calculate in countdown
 			let [days, hours, minutes, seconds] = updateCountdown(UTCNow, start);
@@ -141,22 +144,15 @@ function calculateTime(){
 		else if(end === "??" || (end !== "??" && parseInt(end) >= UTCNow && UTCNow < phase)){ 
 			//if end doesn't exist, then calculate time to phase change OR if it does and we're still below phase change
 			//change the text to "Time until next banner"
-			time.querySelector("#daysSince").innerHTML = time.querySelector("#daysSince")
-			    .innerHTML.replace("Days since banner ended","Time until next phase");
+			time.querySelector("#daysSince").innerHTML = "Time until next phase:" + dataString;
 			//get phase change
 			//calculate in countdown
-			if(currentOptions.Server === "America")
-				phase = parseInt(phase) + 46800000;
-			else if(currentOptions.Server === "Europe")
-				phase = parseInt(phase) + 25200000;  //7 hours offset for Europe???
-			
 			let [days, hours, minutes, seconds] = updateCountdown(phase, UTCNow);
 			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 		}
 		else if(end !== "??" && parseInt(end) >= UTCNow){
 			//end exists and we're below it but we're beyond phase change, calculate time to end 
-			time.querySelector("#daysSince").innerHTML = time.querySelector("#daysSince")
-				.innerHTML.replace("Days since banner ended","Time until version ends");
+			time.querySelector("#daysSince").innerHTML = "Time until version ends:" + dataString;
 			//get end
 			//calculate in countdown
 			let [days, hours, minutes, seconds] = updateCountdown(end, UTCNow);
@@ -164,6 +160,7 @@ function calculateTime(){
 		}
 		else if(end !== "??" && parseInt(end) < UTCNow){
 			//end exists and we're beyond it, calculate days since end
+			time.querySelector("#daysSince").innerHTML = "Days since banner ended:" + dataString;
 			//get end
 			let elapsedDays = Math.round((UTCNow - parseInt(end)) / (1000*3600*24));
 			//get only days since
