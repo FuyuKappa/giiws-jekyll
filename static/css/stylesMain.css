@@ -18,7 +18,7 @@ h1{
 
 body{
 	background-color: #333F50;
-	
+	margin: 0;
 	font-family: helvetica;
 }
 
@@ -33,6 +33,7 @@ body{
 	padding: 15px 0px 15px 0px;
 	color: white;
 	row-gap: 15px;
+	margin-bottom: 16px;
 }
 
 .page:hover{
