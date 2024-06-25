@@ -12,16 +12,12 @@ a, a:visited, a:hover, a:active {
   color: inherit;
 }
 
-/*.center{
-	position: relative;
-	left:50%;
-	transform: translatex(-50%);
-}*/
 
 body{
 	background-color: #333F50;
 	font-weight: 600;
 	font-family: helvetica;
+	margin: 0px;
 }
 
 .grey{
@@ -150,11 +146,9 @@ img{
 	max-width: 1500px;
 	column-gap: 3.5em;
 	row-gap: 2em;
-	padding-bottom: 5em;
 }
 
 .wrapper{
-	//float: right;
 	top: -100px;
 	position: relative;
 	display:flex;
@@ -178,8 +172,6 @@ img{
 	width:fit-content;
 	margin-top: 30px;
 	margin-bottom: 10px;
-	/*word-break: break-word;*/
-	/*text-decoration: underline;*/
 }
 
 .chronicleLabel{
