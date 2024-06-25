@@ -78,5 +78,6 @@ body{
 }
 
 .timeInfoData{
+	padding: 0 4px;
 	width:30%;
 }
