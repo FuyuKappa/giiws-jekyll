@@ -31,7 +31,7 @@ layout: main
 				{% assign currentVersion = site.data.dates[graphic.title] %}
 				<div class="timeInfoData" id="runTime">
 				Version duration:<br>
-				<span id="runTimeData"><date value="{{currentVersion.start}}">--</date> - <date value="{{currentVersion.end}}">--</date></span>
+				<span id="runTimeData"><date class="startDate" value="{{currentVersion.start}}">--</date> - <date class="endDate" value="{{currentVersion.end}}">--</date></span>
 				</div>
 				
 				<div class="timeInfoData" id="daysSince">
