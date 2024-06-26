@@ -106,9 +106,9 @@ function parseDates(){
 		try{
 			let timeStamp = parseInt(date.getAttribute("value"));
 			
-			if(date.className === "phaseDate" && currentOptions.Server === "America")
+			if((date.className === "phaseDate" || date.className === "endDate") && currentOptions.Server === "America")
 				timeStamp = timeStamp + 46800000;  //+13 hours offset for america server???
-			else if(date.className === "phaseDate" && currentOptions.Server === "Europe")
+			else if((date.className === "phaseDate" || date.className === "endDate") && currentOptions.Server === "Europe")
 				timeStamp = timeStamp + 25200000;  //+7 hours offset for Europe???
 
 			let dateTime = new Date(timeStamp);
@@ -128,11 +128,14 @@ function calculateTime(){
 		end = end.getAttribute("value"); //still a string
 		let dataString = "<br><span id='daysSinceData'></span>"
 		
-		if(currentOptions.Server === "America")
+		if(currentOptions.Server === "America"){
 			phase = parseInt(phase) + 46800000;  //+13 hours offset for america server???
-		else if(currentOptions.Server === "Europe")
+			end = parseInt(end) + 46800000;
+		}
+		else if(currentOptions.Server === "Europe"){
 			phase = parseInt(phase) + 25200000;  //+7 hours offset for Europe???
-		
+			end = parseInt(end) + 25200000;
+		}
 		if(end === "??" && phase === "??"){//if end doesn't exist, and neither does phase change, then calculate time to banner start
 			//change the text to "Time until banner starts"
 			time.querySelector("#daysSince").innerHTML = "Time until banner starts:" + dataString;
@@ -155,7 +158,7 @@ function calculateTime(){
 			time.querySelector("#daysSince").innerHTML = "Time until version ends:" + dataString;
 			//get end
 			//calculate in countdown
-			let [days, hours, minutes, seconds] = updateCountdown(end, UTCNow);
+			let [days, hours, minutes, seconds] = updateCountdown(end, UTCNow, false);
 			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 		}
 		else if(end !== "??" && parseInt(end) < UTCNow){
@@ -169,14 +172,14 @@ function calculateTime(){
 	});
 };
 
-function updateCountdown(target, from){
+function updateCountdown(target, from, toOffset = true){
 	if (typeof target == "string")
 		target = parseInt(target);
 	
 	let diffInSec = Math.floor((target - from) / 1000);
 	let days = Math.floor(diffInSec / 86400)
 	let hours = Math.floor((diffInSec % 86400) / 3600);
-	let minutes = Math.floor((diffInSec % 3600) / 60) - 1;
+	let minutes = Math.floor((diffInSec % 3600) / 60) + (toOffset? -1: 1);
 	let seconds = Math.floor(diffInSec % 60);
 	
 	return [days, hours, minutes, seconds];
