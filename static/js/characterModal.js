@@ -137,7 +137,7 @@ function populateData(charName){
 		let phase1 = document.createElement("div");
 		phase1.className = "timeInfoData";
 		phase1.id = "phase1";
-		phase1.innerHTML = "Phase change Date:<br><span id='phase1Data'><date class='phaseDate' value=" + datesData[key].phase + "></date></span>"
+		phase1.innerHTML = "Phase change Date:<br><span id='phase1Data'><date class='phaseDate' value=" + datesData[key].phase + ">TBA</date></span>"
 		
 		timeInfoDiv.appendChild(runTime);
 		timeInfoDiv.appendChild(daysSince);

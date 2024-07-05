@@ -1,5 +1,14 @@
 [
 	{
+		"version" : "4.8",
+		"featuredCharacters": [
+			"Navia",
+			"Nilou",
+			"Emilie",
+			"Yelan"
+		]
+	},
+	{
 		"version" : "4.7",
 		"featuredCharacters": [
 			"Clorinde",
