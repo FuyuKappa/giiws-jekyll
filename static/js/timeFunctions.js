@@ -141,8 +141,8 @@ function calculateTime(){
 			time.querySelector("#daysSince").innerHTML = "Time until banner starts:" + dataString;
 			//get start
 			//calculate in countdown
-			let [days, hours, minutes, seconds] = updateCountdown(UTCNow, start);
-			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
+			let [days, hours, minutes, seconds] = updateCountdown(UTCNow, start.getAttribute("value"));
+			time.querySelector("#daysSinceData").innerHTML = -1*days +  " days " + -1*hours + " hours " + -1*minutes + " minutes and " + -1*seconds + " seconds";
 		}
 		else if(end === "??" || (end !== "??" && parseInt(end) >= UTCNow && UTCNow < phase)){ 
 			//if end doesn't exist, then calculate time to phase change OR if it does and we're still below phase change
