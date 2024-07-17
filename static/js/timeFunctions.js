@@ -157,7 +157,6 @@ function calculateTime(){
 			time.querySelector("#daysSince").innerHTML = "Time until next phase:" + dataString;
 			//get phase change
 			//calculate in countdown
-			console.log(phase);
 			if(phase !== "??"){
 				let [days, hours, minutes, seconds] = updateCountdown(phase, UTCNow);
 				time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
