@@ -128,14 +128,19 @@ function calculateTime(){
 		end = end.getAttribute("value"); //still a string
 		let dataString = "<br><span id='daysSinceData'></span>"
 		
+		//console.log(end);
 		if(currentOptions.Server === "America"){
-			phase = parseInt(phase) + 46800000;  //+13 hours offset for america server???
-			end = parseInt(end) + 46800000;
+			if(phase !== "??") phase = parseInt(phase) + 46800000;  //+13 hours offset for america server???
+			if(end !== "??") end = parseInt(end) + 46800000;
 		}
 		else if(currentOptions.Server === "Europe"){
-			phase = parseInt(phase) + 25200000;  //+7 hours offset for Europe???
-			end = parseInt(end) + 25200000;
+			if(phase !== "??") phase = parseInt(phase) + 25200000;  //+7 hours offset for Europe???
+			if(end !== "??") end = parseInt(end) + 25200000;
 		}
+		
+		//console.log(end);
+		//console.log(parseInt(end) >= UTCNow);
+		//console.log(UTCNow < phase);
 		if(end === "??" && phase === "??" && UTCNow < start){//if end doesn't exist, and neither does phase change, then calculate time to banner start
 			//change the text to "Time until banner starts"
 			time.querySelector("#daysSince").innerHTML = "Time until banner starts:" + dataString;
@@ -158,10 +163,12 @@ function calculateTime(){
 			//get phase change
 			//calculate in countdown
 			if(phase !== "??"){
+				console.log("phase is not empty");
 				let [days, hours, minutes, seconds] = updateCountdown(phase, UTCNow);
 				time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
 			}
 			else{
+				console.log("phase is empty");
 				time.querySelector("#daysSinceData").innerHTML = "TBA";
 			}
 		}
