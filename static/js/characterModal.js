@@ -5,8 +5,8 @@ charPortraits.forEach(function(charPortrait){
 		populateData(charPortrait.getAttribute("data"));
 		
 		let modalCharPatch = document.querySelector(".characterPatch");
-		modalCharPatch.innerText =  modalCharPatch.innerText.replace(/x/g, getDaysSinceLastRun());
-		
+		let [daysSince, lastVersion] = getDaysSinceLastRun();
+		modalCharPatch.innerText =  modalCharPatch.innerText.replace(/x/g, daysSince).replace(/z/g, lastVersion);
 		renderModal();
 	});
 });
@@ -61,6 +61,22 @@ function populateData(charName){
 	
 	currentVersion = bannerOverview[0].version;
 	
+	/*
+	if(window.location.href.search(/\d-\d/g) === -1){ //if in index
+		//Check if the top most banner is currently running. If it contains the word "start", it is yet to start
+		//and is not currently running, make the second top-most the current running version.
+		if(document.querySelector(".page>.timeInfo>#daysSince").innerHTML.indexOf("start") === -1) //top most is current 
+			currentVersion = bannerOverview[0].version;
+		else
+			currentVersion = bannerOverview[1].version;
+	}
+	else{ //if in a graphic
+		
+	}*/
+	console.log(currentVersion);
+	
+	console.log(bannerOverview);
+	console.log(currentVersion);
 	//calculate last time they ran (e.g. Eula last ran in v2.4)
 	//calculate amount of runs
 	let modalCharName = document.querySelector(".characterName");
@@ -69,10 +85,14 @@ function populateData(charName){
 	let modalCharPatch = document.querySelector(".characterPatch");
 	if(banners.length === 1 && currentVersion === banners[0].version) //if the current patch is the character's only run
 		modalCharPatch.innerText = "This is their first run";
+	else
+		modalCharPatch.innerText = "Last run: z (x days ago)";
+		/*
 	else if(currentVersion === banners[0].version)
 		modalCharPatch.innerText = "Last run: V" + banners[1].version + " (x days ago)";
 	else
 		modalCharPatch.innerText = "Last run: V" + banners[0].version + " (x days ago)";
+	*/
 	
 	let modalCharRuns = document.querySelector(".characterRuns");
 	modalCharRuns.innerText = "Total amount of runs: " + banners.length; //check if the character is currently running; if so, -1.
@@ -156,12 +176,13 @@ function populateData(charName){
 
 function getDaysSinceLastRun(){
 	let modalDays = document.querySelectorAll(".modalDays");
+	let bannerVersion = document.querySelectorAll(".bannerTitle");
 	if(modalDays[0].innerHTML.split(" ")[0] === "Time")
 		if(modalDays.length === 1)
-			return "In current version";
+			return ["In current version", -1];
 		else
-			return modalDays[1].querySelector("#daysSinceData").innerText
+			return [modalDays[1].querySelector("#daysSinceData").innerText, bannerVersion[1].innerHTML ];
 	else
-		return modalDays[0].querySelector("#daysSinceData").innerText
+		return [modalDays[0].querySelector("#daysSinceData").innerText, bannerVersion[0].innerHTML];
 }
 
