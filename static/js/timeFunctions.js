@@ -1,9 +1,22 @@
-let currentOptions = {
+let currentOptions;/* = {
 	"Server": "Asia",
 	"Local" : false,
 	"timeZoneOffset": ""
-};
+};*/
 //set default currentOptions to locale offset
+let preferences = localStorage.getItem("time_pref");
+if(preferences === null || preferences === "undefined")
+	 currentOptions = {
+		"Server": "Asia",
+		"Local" : false,
+		"timeZoneOffset": ""
+	};
+else
+	currentOptions = JSON.parse(preferences);
+
+function savePreferences(){
+	localStorage.setItem("time_pref", JSON.stringify(currentOptions));
+};
 
 //initialize the UI
 function renderTimeUI(){
@@ -86,6 +99,7 @@ locals.forEach(function(local){
 		currentOptions.Local = local.checked;
 		setDateFormat();
 		renderTimeUI();
+		savePreferences()
 	});
 });
 let servers = document.querySelectorAll("#server");
@@ -95,6 +109,7 @@ servers.forEach(function(server){
 		renderTimeUI();
 		setDateFormat();
 		calculateTime();
+		savePreferences()
 	});
 });
 
