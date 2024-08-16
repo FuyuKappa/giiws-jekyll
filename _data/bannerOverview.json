@@ -1,5 +1,14 @@
 [
 	{
+		"version" : "5.0",
+		"featuredCharacters": [
+			"Mualani",
+			"Kazuha",
+			"Kinich",
+			"Raiden Shogun"
+		]
+	},
+	{
 		"version" : "4.8",
 		"featuredCharacters": [
 			"Navia",
