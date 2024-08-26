@@ -1,0 +1,35 @@
+<style>
+.backToTopBtn{
+	display: none; /* Hidden by default */
+	position: fixed; /* Fixed/sticky position */
+	bottom: 20px; /* Place the button at the bottom of the page */
+	right: 30px; /* Place the button 30px from the right */
+	z-index: 99; /* Make sure it does not overlap */
+	border: 2px solid black; /* Remove borders */
+	background-color: rgba(0,0,5,0.6);
+	color: white;
+	cursor: pointer;
+	padding: 12px;
+	border-radius: 20px;
+}
+</style>
+<div class="backToTopBtn" onClick="backToTop()">
+	Back to top
+</div>
+<script>
+let backToTopBtn = document.querySelector(".backToTopBtn");
+
+window.onscroll = function() {
+	console.log("Scroll detected");
+	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		backToTopBtn.style.display = "block";
+	} else {
+		backToTopBtn.style.display = "none";
+	}
+}
+
+function backToTop(){
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+}
+</script>
