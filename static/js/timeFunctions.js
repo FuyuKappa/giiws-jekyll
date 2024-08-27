@@ -158,8 +158,8 @@ function calculateTime(){
 			time.querySelector("#daysSince").innerHTML = "Time until banner starts:" + dataString;
 			//get start
 			//calculate in countdown
-			let [days, hours, minutes, seconds] = updateCountdown(UTCNow, start.getAttribute("value"));
-			time.querySelector("#daysSinceData").innerHTML = -1*days +  " days " + -1*hours + " hours " + -1*minutes + " minutes and " + -1*seconds + " seconds";
+			let [days, hours, minutes, seconds] = updateCountdown(start.getAttribute("value"), UTCNow);
+			time.querySelector("#daysSinceData").innerHTML = formatCountdown(days, hours, minutes, seconds);
 		}
 		else if(end === "??" && phase === "??" && UTCNow > start){//if end doesn't exist, and neither does phase change, but we're above start
 			//change the text to "Time until banner starts"
@@ -176,7 +176,7 @@ function calculateTime(){
 			//calculate in countdown
 			if(phase !== "??"){
 				let [days, hours, minutes, seconds] = updateCountdown(phase, UTCNow);
-				time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
+				time.querySelector("#daysSinceData").innerHTML = formatCountdown(days, hours, minutes, seconds);
 			}
 			else{
 				time.querySelector("#daysSinceData").innerHTML = "TBA";
@@ -188,7 +188,7 @@ function calculateTime(){
 			//get end
 			//calculate in countdown
 			let [days, hours, minutes, seconds] = updateCountdown(end, UTCNow, false);
-			time.querySelector("#daysSinceData").innerHTML = days +  " days " + hours + " hours " + minutes + " minutes and " + seconds + " seconds";
+			time.querySelector("#daysSinceData").innerHTML = formatCountdown(days, hours, minutes, seconds);
 		}
 		else if(end !== "??" && parseInt(end) < UTCNow){
 			//end exists and we're beyond it, calculate days since end
@@ -212,6 +212,15 @@ function updateCountdown(target, from, toOffset = true){
 	let seconds = Math.floor(diffInSec % 60);
 	
 	return [days, hours, minutes, seconds];
+}
+
+function formatCountdown(days, hours, minutes, seconds){
+	let output = "";
+	if(days > 0) output += days + ( days===1 ? " day " : " days ");
+	if(hours > 0) output += hours + ( hours===1 ? " hour ": " hours " );
+	if(minutes > 0) output += minutes + ( minutes===1 ? " minute " : " minutes ");
+	output += seconds + " seconds"
+	return output.trim();
 }
 
 setDateFormat();
