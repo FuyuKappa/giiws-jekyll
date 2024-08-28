@@ -141,6 +141,7 @@ function calculateTime(){
 		let [start, end] = time.querySelectorAll("#runTime > #runTimeData > date");
 		let phase = time.querySelector("#phase1 > #phase1Data > date").getAttribute("value");
 		end = end.getAttribute("value"); //still a string
+		start = start.getAttribute("value");
 		let dataString = "<br><span id='daysSinceData'></span>"
 		
 		//console.log(end);
@@ -153,23 +154,30 @@ function calculateTime(){
 			if(end !== "??") end = parseInt(end) + 25200000;
 		}
 		
-		if(end === "??" && phase === "??" && UTCNow < start.getAttribute("value")){//if end doesn't exist, and neither does phase change, then calculate time to banner start
+		if(end === "??" && phase === "??" && UTCNow < start){//if end doesn't exist, and neither does phase change, then calculate time to banner start
 			//change the text to "Time until banner starts"
 			time.querySelector("#daysSince").innerHTML = "Time until banner starts:" + dataString;
 			//get start
 			//calculate in countdown
-			let [days, hours, minutes, seconds] = updateCountdown(start.getAttribute("value"), UTCNow);
+			let [days, hours, minutes, seconds] = updateCountdown(start, UTCNow);
 			time.querySelector("#daysSinceData").innerHTML = formatCountdown(days, hours, minutes, seconds);
 		}
 		else if(end === "??" && phase === "??" && UTCNow > start){//if end doesn't exist, and neither does phase change, but we're above start
 			//change the text to "Time until banner starts"
-			time.querySelector("#daysSince").innerHTML = "Time until phase change:" + dataString;
+			time.querySelector("#daysSince").innerHTML = "Time until next phase:" + dataString;
 			//get start
 			//calculate in countdown
 			time.querySelector("#daysSinceData").innerHTML = "TBA";
 		}
-		else if(end === "??" || (end !== "??" && parseInt(end) >= UTCNow && UTCNow < phase)){ 
-			//if end doesn't exist, then calculate time to phase change OR if it does and we're still below phase change
+		else if((end === "??" && UTCNow < phase && UTCNow < start) || (end !== "??" && parseInt(end) >= UTCNow && UTCNow < phase && UTCNow < start)){
+			//end doesn't exist OR it does and we're below phase and start
+			time.querySelector("#daysSince").innerHTML = "Time until banner starts:" + dataString;
+			let [days, hours, minutes, seconds] = updateCountdown(start, UTCNow);
+			time.querySelector("#daysSinceData").innerHTML = formatCountdown(days, hours, minutes, seconds);
+			console.log(UTCNow > start);
+		}
+		else if((end === "??" && UTCNow < phase && UTCNow > start)  || (end !== "??" && parseInt(end) >= UTCNow && UTCNow < phase && UTCNow > start)){ 
+			//if end doesn't exist, then calculate time to phase change OR if it does and we're still below phase change and above start
 			//change the text to "Time until next banner"
 			time.querySelector("#daysSince").innerHTML = "Time until next phase:" + dataString;
 			//get phase change
