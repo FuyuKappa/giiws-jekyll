@@ -190,6 +190,13 @@ function calculateTime(){
 				time.querySelector("#daysSinceData").innerHTML = "TBA";
 			}
 		}
+		else if((end === "??" && UTCNow > phase)){ 
+			//if end doesn't exist but we're above phase change
+			//change the text to "Time until version ends"
+			time.querySelector("#daysSince").innerHTML = "Time until version ends:" + dataString;
+			time.querySelector("#daysSinceData").innerHTML = "TBA";
+			
+		}
 		else if(end !== "??" && parseInt(end) >= UTCNow){
 			//end exists and we're below it but we're beyond phase change, calculate time to end 
 			time.querySelector("#daysSince").innerHTML = "Time until version ends:" + dataString;
