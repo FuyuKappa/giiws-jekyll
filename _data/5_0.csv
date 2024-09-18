@@ -1,8 +1,8 @@
 name,patches,version,runs,status
-Mualani,-,-,0,ACTIVE
-Kazuha,4,4.5,4,ACTIVE
-Kinich,-,-,0,NEXT
-Raiden Shogun,6,4.3,4,NEXT
+Mualani,-,-,0,DONE
+Kazuha,4,4.5,4,DONE
+Kinich,-,-,0,ACTIVE
+Raiden Shogun,6,4.3,4,ACTIVE
 Shenhe,13,3.5,2,-
 Ganyu,12,3.6,4,-
 Kokomi,10,3.8,4,-
