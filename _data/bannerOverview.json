@@ -1,5 +1,14 @@
 [
 	{
+		"version" : "5.1",
+		"featuredCharacters": [
+			"Xilonen",
+			"Chiori",
+			"Nahida",
+			"Hu Tao"
+		]
+	},
+	{
 		"version" : "5.0",
 		"featuredCharacters": [
 			"Mualani",
