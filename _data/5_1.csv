@@ -1,8 +1,8 @@
 name,patches,version,runs,status
-Xilonen,-,-,0,ACTIVE
-Chiori,5,4.5,1,ACTIVE
-Nahida,6,4.4,3,NEXT
-Hu Tao,9,4.1,4,NEXT
+Xilonen,-,-,0,DONE
+Chiori,5,4.5,1,DONE
+Nahida,6,4.4,3,ACTIVE
+Hu Tao,9,4.1,4,ACTIVE
 Shenhe,14,3.5,2,-
 Ganyu,13,3.6,4,-
 Kokomi,11,3.8,4,-
