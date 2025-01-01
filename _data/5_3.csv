@@ -1,0 +1,45 @@
+name,patches,version,runs,status
+Mavuika,-,-,0,ACTIVE
+Citlali,-,-,0,ACTIVE
+Arlecchino,6,4.6,1,NEXT
+Clorinde,5,4.7,1,NEXT
+Baizhu,6,4.6,3,NEXT(C)
+Shenhe,16,3.5,2,NEXT(C)
+Keqing,STANDARD,-,0,NEXT(C)
+Ganyu,15,3.6,4,NEXT(C)
+Xiao,8,4.4,5,NEXT(C)
+Childe,12,4.0,5,NEXT(C)
+Qiqi,STANDARD,-,0,NEXT(C)
+Kokomi,13,3.8,4,-
+Wriothesley,11,4.1,1,-
+Venti,11,4.1,5,-
+Cyno,10,4.2,3,-
+Ayato,10,4.2,3,-
+Ayaka,9,4.3,4,-
+Yoimiya,9,4.3,5,-
+Xianyun,8,4.4,1,-
+Yae Miko,8,4.4,4,-
+Itto,7,4.5,4,-
+Albedo,7,4.5,4,-
+Eula,7,4.5,4,-
+Klee,7,4.5,5,-
+Wanderer,6,4.6,3,-
+Al Haitham,5,4.7,3,-
+Sigewinne,5,4.7,1,-
+Furina,5,4.7,2,-
+Navia,4,4.8,2,-
+Nilou,4,4.8,3,-
+Emilie,4,4.8,1,-
+Yelan,4,4.8,4,-
+Mualani,3,5.0,1,-
+Kazuha,3,5.0,5,-
+Kinich,3,5.0,1,-
+Raiden Shogun,3,5.0,5,-
+Xilonen,2,5.1,1,-
+Chiori,2,5.1,2,-
+Nahida,2,5.1,4,-
+Hu Tao,2,5.1,5,-
+Chasca,1,5.2,1,-
+Lyney,1,5.2,3,-
+Zhongli,1,5.2,6,-
+Neuvillette,1,5.2,3,-
