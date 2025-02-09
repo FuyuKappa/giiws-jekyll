@@ -7,7 +7,11 @@
 				<div class="charName">{{char.name}}</div>
 				<img src="./static/portraits/{{char.name}}.png" class="{{char.name}}Img charImg" alt="{{char.name}} stats" title="{{char.name}} stats" data="{{char.name}}"></img>
 				<hr class="divider">
+				{% if char.patches == "STANDARD" %}
+				<div class="patches" style="font-size:30px; line-height: 58px;">{{char.patches}}</div>
+				{% else %}
 				<div class="patches">{{char.patches}}</div>
+				{%endif%}
 				<hr class="divider">
 				<div class="lastRun">{%unless char.version == "-"%}V{%endunless%}{{char.version}}</div>
 				<hr class="divider">
