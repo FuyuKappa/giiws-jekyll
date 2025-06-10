@@ -1,0 +1,48 @@
+name,patches,version,runs,status
+Escoffier,-,-,0,DONE
+Navia,7,4.8,2,DONE
+Kinich,6,5.0,1,ACTIVE
+Raiden Shogun,6,5.0,5,ACTIVE
+Ayaka,12,4.3,4,ACTIVE(C)
+Ayato,13,4.2,3,ACTIVE(C)
+Yoimiya,12,4.3,5,ACTIVE(C)
+Chiori,5,5.1,2,ACTIVE(C)
+Yae Miko,11,4.4,4,ACTIVE(C)
+Itto,10,4.5,4,ACTIVE(C)
+Kokomi,16,3.8,4,ACTIVE(C)
+Kazuha,6,5.0,5,ACTIVE(C)
+Cyno,13,4.2,3,-
+Albedo,10,4.5,4,-
+Eula,10,4.5,4,-
+Klee,10,4.5,5,-
+Wanderer,9,4.6,3,-
+Al Haitham,8,4.7,3,-
+Nilou,7,4.8,3,-
+Emilie,7,4.8,1,-
+Yelan,7,4.8,4,-
+Mualani,6,5.0,1,-
+Nahida,5,5.1,4,-
+Hu Tao,5,5.1,5,-
+Chasca,4,5.2,1,-
+Lyney,4,5.2,3,-
+Zhongli,4,5.2,6,-
+Neuvillette,4,5.2,3,-
+Mavuika,3,5.3,1,-
+Citlali,3,5.3,1,-
+Arlecchino,3,5.3,2,-
+Clorinde,3,5.3,2,-
+Baizhu,3,5.3,4,-
+Shenhe,3,5.3,3,-
+Keqing,3,5.3,1,-
+Ganyu,3,5.3,5,-
+Xiao,3,5.3,6,-
+Childe,3,5.3,6,-
+Qiqi,3,5.3,1,-
+Mizuki,2,5.4,1,-
+Sigewinne,2,5.4,2,-
+Furina,2,5.4,3,-
+Wriothesley,2,5.4,2,-
+Varesa,1,5.5,1,-
+Xianyun,1,5.5,2,-
+Xilonen,1,5.5,2,-
+Venti,1,5.5,6,-
