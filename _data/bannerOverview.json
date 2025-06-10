@@ -1,5 +1,40 @@
 [	
 	{
+		"version" : "5.7",
+		"featuredCharacters": [
+			"Skirk",
+			"Shenhe",
+			"Mavuika",
+			"Emilie"
+		]
+	},
+	{
+		"version" : "5.6",
+		"featuredCharacters": [
+			"Escoffier",
+			"Navia",
+			"Kinich",
+			"Raiden Shogun",
+			"Ayaka",
+			"Ayato",
+			"Yoimiya",
+			"Chiori",
+			"Yae Miko",
+			"Itto",
+			"Kokomi",
+			"Kazuha"
+		]
+	},
+	{
+		"version" : "5.5",
+		"featuredCharacters": [
+			"Varesa",
+			"Xianyun",
+			"Xilonen",
+			"Venti"
+		]
+	},
+	{
 		"version" : "5.4",
 		"featuredCharacters": [
 			"Mizuki",
