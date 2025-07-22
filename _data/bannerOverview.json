@@ -1,5 +1,14 @@
 [	
 	{
+		"version" : "5.8",
+		"featuredCharacters": [
+			"Ineffa",
+			"Citlali",
+			"Mualani",
+			"Chasca"
+		]
+	},
+	{
 		"version" : "5.7",
 		"featuredCharacters": [
 			"Skirk",

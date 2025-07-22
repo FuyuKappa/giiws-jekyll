@@ -23,20 +23,18 @@ body{
 .grey{
 	border: 3px solid black;
 	background-image: linear-gradient(#c9c9c9, #a8a8a8, #6f6f6f);
-	width: 178px;
-	min-height: 300px;
+	width: 20%;
+	max-width: 128px;
 }
 .charName{
-	max-width: 178px;
 	text-align:center;
-	height: 36px;
 	padding-top: 5px;
-	font-size: 30px;
+	//font-size: 30px;
 	overflow: hidden;
-	white-space: normal;
 	font-weight: 700;
 	font-family: verdana;
 	white-space: nowrap;
+	height: 13%;
 }
 
 img{
@@ -44,8 +42,8 @@ img{
 	display: block;
 	margin-left:auto;
 	margin-right:auto;
-	width: 178px;
-	height: 178px;
+	width: 100%;
+	aspect-ratio:1/1;
 	padding:0px;
 	position: relative;
 	left:50%;
@@ -64,19 +62,19 @@ img{
 
 .patches{
 	text-align: center;
-	font-size: 48px;
+	font-size: 3em;
 	color: white;
 }
 
 .lastRun{
 	text-align: center;
-	font-size: 35px;
+	font-size: 1.5em;
 	color: white;
 }
 
 .runs{
 	text-align: center;
-	font-size: 33px;
+	font-size: 1.5em;
 	color: white;
 }
 
@@ -86,7 +84,7 @@ img{
 	position: relative;
 	top: 50%;
 	transform: translatey(-50%);
-	font-size: 30px;
+	font-size: 1em;
 	color: white;
 }
 
@@ -94,9 +92,10 @@ img{
 	display:flex;
 	flex-direction: row;
 	margin:0%;
-	font-size: 30px;
+	font-size: 1em;
 	color: red;
 	text-align:left;
+	white-space:nowrap;
 }
 
 .goldenRow{
@@ -106,23 +105,25 @@ img{
 	display:flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	column-gap: 3.5em;
+	column-gap: 3em;
 	row-gap: 2em;
 	width: 75%;
 	top: 10px;
 	max-width: 1500px;
 }
 
+
+
 .golden{
 	border: 3px solid black;
 	background-image: linear-gradient(#FFD966, #FFC208, #AB8100);
-	width: 178px;
-	min-height: 300px;
+	width: 20%;
+	max-width: 128px;
 }
 
 .remarks{
 	text-align: center;
-	font-size: 40px;
+	font-size: 2em;
 	color: white;
 }
 
@@ -144,7 +145,7 @@ img{
 	top: 20px;
 	width: 75%;
 	max-width: 1500px;
-	column-gap: 3.5em;
+	column-gap: 3em;
 	row-gap: 2em;
 }
 
@@ -208,6 +209,10 @@ img{
 	max-height: 100px;
 }
 
+.goldenHR{
+	margin-top: 75px;
+}
+
 @media screen and (max-width: 800px){
 	.backArrow{
 		height: 15vw;
@@ -227,5 +232,25 @@ img{
 		width: 15vw;
 		max-width: 150px;
 		max-height: 150px;
+	}
+	
+	.greyTable{
+		column-gap: 3vw;
+	}
+	
+	.goldenRow{
+		column-gap: 3vw;
+	}
+}
+
+@media screen and (max-width: 1100px){
+	hr.goldenHR{
+		margin-top: 104px
+	}
+}
+
+@media screen and (max-width: 1053px){
+	hr.goldenHR{
+		margin-top: 144px
 	}
 }

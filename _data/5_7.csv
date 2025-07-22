@@ -1,8 +1,8 @@
 name,patches,version,runs,status
-Skirk,-,-,0,NEXT
-Shenhe,4,5.3,3,NEXT
-Mavuika,4,5.3,1,NEXT
-Emilie,8,4.8,1,NEXT
+Skirk,-,-,0,DONE
+Shenhe,4,5.3,3,DONE
+Mavuika,4,5.3,1,ACTIVE
+Emilie,8,4.8,1,ACTIVE
 Cyno,14,4.2,3,-
 Albedo,11,4.5,4,-
 Eula,11,4.5,4,-

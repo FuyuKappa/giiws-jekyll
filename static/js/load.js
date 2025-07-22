@@ -1,6 +1,7 @@
 var doc = document;
 
 var names = doc.querySelectorAll(".charName");
+var remarks = doc.querySelectorAll(".remarks");
 
 //Special thanks to: Ricardo Goncalves
 //https://github.com/ricardobrg/fitText/
@@ -36,8 +37,14 @@ function fitText(outputSelector){
     }
 }
 
-for(let i = 0; i < names.length; i++){
-	fitText(names[i]);
+function resizeAll(){
+	for(let i = 0; i < names.length; i++){
+		fitText(names[i]);
+	}
+
+	for(let i = 0; i < remarks.length; i++){
+		fitText(remarks[i]);
+	}
 }
 
 
@@ -46,3 +53,4 @@ for(let i = 0; i < statuses.length; i++){
 	statuses[i].innerHTML = statuses[i].innerHTML.replace(/\(C\)/g,"");
 }
 
+window.onresize = resizeAll;
